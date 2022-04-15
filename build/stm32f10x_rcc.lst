@@ -1,0 +1,1606 @@
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f10x_rcc.c"
+  14              		.text
+  15              		.section	.data.APBAHBPrescTable,"aw"
+  16              		.align	2
+  19              	APBAHBPrescTable:
+  20 0000 00000000 		.ascii	"\000\000\000\000\001\002\003\004\001\002\003\004\006"
+  20      01020304 
+  20      01020304 
+  20      06
+  21 000d 070809   		.ascii	"\007\010\011"
+  22              		.section	.data.ADCPrescTable,"aw"
+  23              		.align	2
+  26              	ADCPrescTable:
+  27 0000 02040608 		.ascii	"\002\004\006\010"
+  28              		.section	.text.RCC_DeInit,"ax",%progbits
+  29              		.align	1
+  30              		.global	RCC_DeInit
+  31              		.syntax unified
+  32              		.thumb
+  33              		.thumb_func
+  35              	RCC_DeInit:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 1, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 80B4     		push	{r7}
+  40 0002 00AF     		add	r7, sp, #0
+  41 0004 134B     		ldr	r3, .L2
+  42 0006 1B68     		ldr	r3, [r3]
+  43 0008 124A     		ldr	r2, .L2
+  44 000a 43F00103 		orr	r3, r3, #1
+  45 000e 1360     		str	r3, [r2]
+  46 0010 104B     		ldr	r3, .L2
+  47 0012 5A68     		ldr	r2, [r3, #4]
+  48 0014 0F49     		ldr	r1, .L2
+  49 0016 104B     		ldr	r3, .L2+4
+  50 0018 1340     		ands	r3, r3, r2
+  51 001a 4B60     		str	r3, [r1, #4]
+  52 001c 0D4B     		ldr	r3, .L2
+  53 001e 1B68     		ldr	r3, [r3]
+  54 0020 0C4A     		ldr	r2, .L2
+  55 0022 23F08473 		bic	r3, r3, #17301504
+  56 0026 23F48033 		bic	r3, r3, #65536
+  57 002a 1360     		str	r3, [r2]
+  58 002c 094B     		ldr	r3, .L2
+  59 002e 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 2
+
+
+  60 0030 084A     		ldr	r2, .L2
+  61 0032 23F48023 		bic	r3, r3, #262144
+  62 0036 1360     		str	r3, [r2]
+  63 0038 064B     		ldr	r3, .L2
+  64 003a 5B68     		ldr	r3, [r3, #4]
+  65 003c 054A     		ldr	r2, .L2
+  66 003e 23F4FE03 		bic	r3, r3, #8323072
+  67 0042 5360     		str	r3, [r2, #4]
+  68 0044 034B     		ldr	r3, .L2
+  69 0046 4FF41F02 		mov	r2, #10420224
+  70 004a 9A60     		str	r2, [r3, #8]
+  71 004c 00BF     		nop
+  72 004e BD46     		mov	sp, r7
+  73              		@ sp needed
+  74 0050 80BC     		pop	{r7}
+  75 0052 7047     		bx	lr
+  76              	.L3:
+  77              		.align	2
+  78              	.L2:
+  79 0054 00100240 		.word	1073876992
+  80 0058 0000FFF8 		.word	-117506048
+  82              		.section	.text.RCC_HSEConfig,"ax",%progbits
+  83              		.align	1
+  84              		.global	RCC_HSEConfig
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  89              	RCC_HSEConfig:
+  90              		@ args = 0, pretend = 0, frame = 8
+  91              		@ frame_needed = 1, uses_anonymous_args = 0
+  92              		@ link register save eliminated.
+  93 0000 80B4     		push	{r7}
+  94 0002 83B0     		sub	sp, sp, #12
+  95 0004 00AF     		add	r7, sp, #0
+  96 0006 7860     		str	r0, [r7, #4]
+  97 0008 134B     		ldr	r3, .L9
+  98 000a 1B68     		ldr	r3, [r3]
+  99 000c 124A     		ldr	r2, .L9
+ 100 000e 23F48033 		bic	r3, r3, #65536
+ 101 0012 1360     		str	r3, [r2]
+ 102 0014 104B     		ldr	r3, .L9
+ 103 0016 1B68     		ldr	r3, [r3]
+ 104 0018 0F4A     		ldr	r2, .L9
+ 105 001a 23F48023 		bic	r3, r3, #262144
+ 106 001e 1360     		str	r3, [r2]
+ 107 0020 7B68     		ldr	r3, [r7, #4]
+ 108 0022 B3F5803F 		cmp	r3, #65536
+ 109 0026 04D0     		beq	.L5
+ 110 0028 7B68     		ldr	r3, [r7, #4]
+ 111 002a B3F5802F 		cmp	r3, #262144
+ 112 002e 07D0     		beq	.L6
+ 113 0030 0DE0     		b	.L8
+ 114              	.L5:
+ 115 0032 094B     		ldr	r3, .L9
+ 116 0034 1B68     		ldr	r3, [r3]
+ 117 0036 084A     		ldr	r2, .L9
+ 118 0038 43F48033 		orr	r3, r3, #65536
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 3
+
+
+ 119 003c 1360     		str	r3, [r2]
+ 120 003e 06E0     		b	.L8
+ 121              	.L6:
+ 122 0040 054B     		ldr	r3, .L9
+ 123 0042 1B68     		ldr	r3, [r3]
+ 124 0044 044A     		ldr	r2, .L9
+ 125 0046 43F4A023 		orr	r3, r3, #327680
+ 126 004a 1360     		str	r3, [r2]
+ 127 004c 00BF     		nop
+ 128              	.L8:
+ 129 004e 00BF     		nop
+ 130 0050 0C37     		adds	r7, r7, #12
+ 131 0052 BD46     		mov	sp, r7
+ 132              		@ sp needed
+ 133 0054 80BC     		pop	{r7}
+ 134 0056 7047     		bx	lr
+ 135              	.L10:
+ 136              		.align	2
+ 137              	.L9:
+ 138 0058 00100240 		.word	1073876992
+ 140              		.section	.text.RCC_WaitForHSEStartUp,"ax",%progbits
+ 141              		.align	1
+ 142              		.global	RCC_WaitForHSEStartUp
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 147              	RCC_WaitForHSEStartUp:
+ 148              		@ args = 0, pretend = 0, frame = 8
+ 149              		@ frame_needed = 1, uses_anonymous_args = 0
+ 150 0000 80B5     		push	{r7, lr}
+ 151 0002 82B0     		sub	sp, sp, #8
+ 152 0004 00AF     		add	r7, sp, #0
+ 153 0006 0023     		movs	r3, #0
+ 154 0008 3B60     		str	r3, [r7]
+ 155 000a 0023     		movs	r3, #0
+ 156 000c FB71     		strb	r3, [r7, #7]
+ 157 000e 0023     		movs	r3, #0
+ 158 0010 BB71     		strb	r3, [r7, #6]
+ 159              	.L13:
+ 160 0012 3120     		movs	r0, #49
+ 161 0014 FFF7FEFF 		bl	RCC_GetFlagStatus
+ 162 0018 0346     		mov	r3, r0
+ 163 001a BB71     		strb	r3, [r7, #6]
+ 164 001c 3B68     		ldr	r3, [r7]
+ 165 001e 0133     		adds	r3, r3, #1
+ 166 0020 3B60     		str	r3, [r7]
+ 167 0022 3B68     		ldr	r3, [r7]
+ 168 0024 B3F5A06F 		cmp	r3, #1280
+ 169 0028 02D0     		beq	.L12
+ 170 002a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 171 002c 002B     		cmp	r3, #0
+ 172 002e F0D0     		beq	.L13
+ 173              	.L12:
+ 174 0030 3120     		movs	r0, #49
+ 175 0032 FFF7FEFF 		bl	RCC_GetFlagStatus
+ 176 0036 0346     		mov	r3, r0
+ 177 0038 002B     		cmp	r3, #0
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 4
+
+
+ 178 003a 02D0     		beq	.L14
+ 179 003c 0123     		movs	r3, #1
+ 180 003e FB71     		strb	r3, [r7, #7]
+ 181 0040 01E0     		b	.L15
+ 182              	.L14:
+ 183 0042 0023     		movs	r3, #0
+ 184 0044 FB71     		strb	r3, [r7, #7]
+ 185              	.L15:
+ 186 0046 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 187 0048 1846     		mov	r0, r3
+ 188 004a 0837     		adds	r7, r7, #8
+ 189 004c BD46     		mov	sp, r7
+ 190              		@ sp needed
+ 191 004e 80BD     		pop	{r7, pc}
+ 193              		.section	.text.RCC_AdjustHSICalibrationValue,"ax",%progbits
+ 194              		.align	1
+ 195              		.global	RCC_AdjustHSICalibrationValue
+ 196              		.syntax unified
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	RCC_AdjustHSICalibrationValue:
+ 201              		@ args = 0, pretend = 0, frame = 16
+ 202              		@ frame_needed = 1, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+ 204 0000 80B4     		push	{r7}
+ 205 0002 85B0     		sub	sp, sp, #20
+ 206 0004 00AF     		add	r7, sp, #0
+ 207 0006 0346     		mov	r3, r0
+ 208 0008 FB71     		strb	r3, [r7, #7]
+ 209 000a 0023     		movs	r3, #0
+ 210 000c FB60     		str	r3, [r7, #12]
+ 211 000e 0A4B     		ldr	r3, .L18
+ 212 0010 1B68     		ldr	r3, [r3]
+ 213 0012 FB60     		str	r3, [r7, #12]
+ 214 0014 FB68     		ldr	r3, [r7, #12]
+ 215 0016 23F0F803 		bic	r3, r3, #248
+ 216 001a FB60     		str	r3, [r7, #12]
+ 217 001c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 218 001e DB00     		lsls	r3, r3, #3
+ 219 0020 FA68     		ldr	r2, [r7, #12]
+ 220 0022 1343     		orrs	r3, r3, r2
+ 221 0024 FB60     		str	r3, [r7, #12]
+ 222 0026 044A     		ldr	r2, .L18
+ 223 0028 FB68     		ldr	r3, [r7, #12]
+ 224 002a 1360     		str	r3, [r2]
+ 225 002c 00BF     		nop
+ 226 002e 1437     		adds	r7, r7, #20
+ 227 0030 BD46     		mov	sp, r7
+ 228              		@ sp needed
+ 229 0032 80BC     		pop	{r7}
+ 230 0034 7047     		bx	lr
+ 231              	.L19:
+ 232 0036 00BF     		.align	2
+ 233              	.L18:
+ 234 0038 00100240 		.word	1073876992
+ 236              		.section	.text.RCC_HSICmd,"ax",%progbits
+ 237              		.align	1
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 5
+
+
+ 238              		.global	RCC_HSICmd
+ 239              		.syntax unified
+ 240              		.thumb
+ 241              		.thumb_func
+ 243              	RCC_HSICmd:
+ 244              		@ args = 0, pretend = 0, frame = 8
+ 245              		@ frame_needed = 1, uses_anonymous_args = 0
+ 246              		@ link register save eliminated.
+ 247 0000 80B4     		push	{r7}
+ 248 0002 83B0     		sub	sp, sp, #12
+ 249 0004 00AF     		add	r7, sp, #0
+ 250 0006 0346     		mov	r3, r0
+ 251 0008 FB71     		strb	r3, [r7, #7]
+ 252 000a 044A     		ldr	r2, .L21
+ 253 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 254 000e 1360     		str	r3, [r2]
+ 255 0010 00BF     		nop
+ 256 0012 0C37     		adds	r7, r7, #12
+ 257 0014 BD46     		mov	sp, r7
+ 258              		@ sp needed
+ 259 0016 80BC     		pop	{r7}
+ 260 0018 7047     		bx	lr
+ 261              	.L22:
+ 262 001a 00BF     		.align	2
+ 263              	.L21:
+ 264 001c 00004242 		.word	1111621632
+ 266              		.section	.text.RCC_PLLConfig,"ax",%progbits
+ 267              		.align	1
+ 268              		.global	RCC_PLLConfig
+ 269              		.syntax unified
+ 270              		.thumb
+ 271              		.thumb_func
+ 273              	RCC_PLLConfig:
+ 274              		@ args = 0, pretend = 0, frame = 16
+ 275              		@ frame_needed = 1, uses_anonymous_args = 0
+ 276              		@ link register save eliminated.
+ 277 0000 80B4     		push	{r7}
+ 278 0002 85B0     		sub	sp, sp, #20
+ 279 0004 00AF     		add	r7, sp, #0
+ 280 0006 7860     		str	r0, [r7, #4]
+ 281 0008 3960     		str	r1, [r7]
+ 282 000a 0023     		movs	r3, #0
+ 283 000c FB60     		str	r3, [r7, #12]
+ 284 000e 0A4B     		ldr	r3, .L24
+ 285 0010 5B68     		ldr	r3, [r3, #4]
+ 286 0012 FB60     		str	r3, [r7, #12]
+ 287 0014 FB68     		ldr	r3, [r7, #12]
+ 288 0016 23F47C13 		bic	r3, r3, #4128768
+ 289 001a FB60     		str	r3, [r7, #12]
+ 290 001c 7A68     		ldr	r2, [r7, #4]
+ 291 001e 3B68     		ldr	r3, [r7]
+ 292 0020 1343     		orrs	r3, r3, r2
+ 293 0022 FA68     		ldr	r2, [r7, #12]
+ 294 0024 1343     		orrs	r3, r3, r2
+ 295 0026 FB60     		str	r3, [r7, #12]
+ 296 0028 034A     		ldr	r2, .L24
+ 297 002a FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 6
+
+
+ 298 002c 5360     		str	r3, [r2, #4]
+ 299 002e 00BF     		nop
+ 300 0030 1437     		adds	r7, r7, #20
+ 301 0032 BD46     		mov	sp, r7
+ 302              		@ sp needed
+ 303 0034 80BC     		pop	{r7}
+ 304 0036 7047     		bx	lr
+ 305              	.L25:
+ 306              		.align	2
+ 307              	.L24:
+ 308 0038 00100240 		.word	1073876992
+ 310              		.section	.text.RCC_PLLCmd,"ax",%progbits
+ 311              		.align	1
+ 312              		.global	RCC_PLLCmd
+ 313              		.syntax unified
+ 314              		.thumb
+ 315              		.thumb_func
+ 317              	RCC_PLLCmd:
+ 318              		@ args = 0, pretend = 0, frame = 8
+ 319              		@ frame_needed = 1, uses_anonymous_args = 0
+ 320              		@ link register save eliminated.
+ 321 0000 80B4     		push	{r7}
+ 322 0002 83B0     		sub	sp, sp, #12
+ 323 0004 00AF     		add	r7, sp, #0
+ 324 0006 0346     		mov	r3, r0
+ 325 0008 FB71     		strb	r3, [r7, #7]
+ 326 000a 044A     		ldr	r2, .L27
+ 327 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 328 000e 1360     		str	r3, [r2]
+ 329 0010 00BF     		nop
+ 330 0012 0C37     		adds	r7, r7, #12
+ 331 0014 BD46     		mov	sp, r7
+ 332              		@ sp needed
+ 333 0016 80BC     		pop	{r7}
+ 334 0018 7047     		bx	lr
+ 335              	.L28:
+ 336 001a 00BF     		.align	2
+ 337              	.L27:
+ 338 001c 60004242 		.word	1111621728
+ 340              		.section	.text.RCC_SYSCLKConfig,"ax",%progbits
+ 341              		.align	1
+ 342              		.global	RCC_SYSCLKConfig
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 347              	RCC_SYSCLKConfig:
+ 348              		@ args = 0, pretend = 0, frame = 16
+ 349              		@ frame_needed = 1, uses_anonymous_args = 0
+ 350              		@ link register save eliminated.
+ 351 0000 80B4     		push	{r7}
+ 352 0002 85B0     		sub	sp, sp, #20
+ 353 0004 00AF     		add	r7, sp, #0
+ 354 0006 7860     		str	r0, [r7, #4]
+ 355 0008 0023     		movs	r3, #0
+ 356 000a FB60     		str	r3, [r7, #12]
+ 357 000c 094B     		ldr	r3, .L30
+ 358 000e 5B68     		ldr	r3, [r3, #4]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 7
+
+
+ 359 0010 FB60     		str	r3, [r7, #12]
+ 360 0012 FB68     		ldr	r3, [r7, #12]
+ 361 0014 23F00303 		bic	r3, r3, #3
+ 362 0018 FB60     		str	r3, [r7, #12]
+ 363 001a FA68     		ldr	r2, [r7, #12]
+ 364 001c 7B68     		ldr	r3, [r7, #4]
+ 365 001e 1343     		orrs	r3, r3, r2
+ 366 0020 FB60     		str	r3, [r7, #12]
+ 367 0022 044A     		ldr	r2, .L30
+ 368 0024 FB68     		ldr	r3, [r7, #12]
+ 369 0026 5360     		str	r3, [r2, #4]
+ 370 0028 00BF     		nop
+ 371 002a 1437     		adds	r7, r7, #20
+ 372 002c BD46     		mov	sp, r7
+ 373              		@ sp needed
+ 374 002e 80BC     		pop	{r7}
+ 375 0030 7047     		bx	lr
+ 376              	.L31:
+ 377 0032 00BF     		.align	2
+ 378              	.L30:
+ 379 0034 00100240 		.word	1073876992
+ 381              		.section	.text.RCC_GetSYSCLKSource,"ax",%progbits
+ 382              		.align	1
+ 383              		.global	RCC_GetSYSCLKSource
+ 384              		.syntax unified
+ 385              		.thumb
+ 386              		.thumb_func
+ 388              	RCC_GetSYSCLKSource:
+ 389              		@ args = 0, pretend = 0, frame = 0
+ 390              		@ frame_needed = 1, uses_anonymous_args = 0
+ 391              		@ link register save eliminated.
+ 392 0000 80B4     		push	{r7}
+ 393 0002 00AF     		add	r7, sp, #0
+ 394 0004 044B     		ldr	r3, .L34
+ 395 0006 5B68     		ldr	r3, [r3, #4]
+ 396 0008 DBB2     		uxtb	r3, r3
+ 397 000a 03F00C03 		and	r3, r3, #12
+ 398 000e DBB2     		uxtb	r3, r3
+ 399 0010 1846     		mov	r0, r3
+ 400 0012 BD46     		mov	sp, r7
+ 401              		@ sp needed
+ 402 0014 80BC     		pop	{r7}
+ 403 0016 7047     		bx	lr
+ 404              	.L35:
+ 405              		.align	2
+ 406              	.L34:
+ 407 0018 00100240 		.word	1073876992
+ 409              		.section	.text.RCC_HCLKConfig,"ax",%progbits
+ 410              		.align	1
+ 411              		.global	RCC_HCLKConfig
+ 412              		.syntax unified
+ 413              		.thumb
+ 414              		.thumb_func
+ 416              	RCC_HCLKConfig:
+ 417              		@ args = 0, pretend = 0, frame = 16
+ 418              		@ frame_needed = 1, uses_anonymous_args = 0
+ 419              		@ link register save eliminated.
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 8
+
+
+ 420 0000 80B4     		push	{r7}
+ 421 0002 85B0     		sub	sp, sp, #20
+ 422 0004 00AF     		add	r7, sp, #0
+ 423 0006 7860     		str	r0, [r7, #4]
+ 424 0008 0023     		movs	r3, #0
+ 425 000a FB60     		str	r3, [r7, #12]
+ 426 000c 094B     		ldr	r3, .L37
+ 427 000e 5B68     		ldr	r3, [r3, #4]
+ 428 0010 FB60     		str	r3, [r7, #12]
+ 429 0012 FB68     		ldr	r3, [r7, #12]
+ 430 0014 23F0F003 		bic	r3, r3, #240
+ 431 0018 FB60     		str	r3, [r7, #12]
+ 432 001a FA68     		ldr	r2, [r7, #12]
+ 433 001c 7B68     		ldr	r3, [r7, #4]
+ 434 001e 1343     		orrs	r3, r3, r2
+ 435 0020 FB60     		str	r3, [r7, #12]
+ 436 0022 044A     		ldr	r2, .L37
+ 437 0024 FB68     		ldr	r3, [r7, #12]
+ 438 0026 5360     		str	r3, [r2, #4]
+ 439 0028 00BF     		nop
+ 440 002a 1437     		adds	r7, r7, #20
+ 441 002c BD46     		mov	sp, r7
+ 442              		@ sp needed
+ 443 002e 80BC     		pop	{r7}
+ 444 0030 7047     		bx	lr
+ 445              	.L38:
+ 446 0032 00BF     		.align	2
+ 447              	.L37:
+ 448 0034 00100240 		.word	1073876992
+ 450              		.section	.text.RCC_PCLK1Config,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	RCC_PCLK1Config
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 457              	RCC_PCLK1Config:
+ 458              		@ args = 0, pretend = 0, frame = 16
+ 459              		@ frame_needed = 1, uses_anonymous_args = 0
+ 460              		@ link register save eliminated.
+ 461 0000 80B4     		push	{r7}
+ 462 0002 85B0     		sub	sp, sp, #20
+ 463 0004 00AF     		add	r7, sp, #0
+ 464 0006 7860     		str	r0, [r7, #4]
+ 465 0008 0023     		movs	r3, #0
+ 466 000a FB60     		str	r3, [r7, #12]
+ 467 000c 094B     		ldr	r3, .L40
+ 468 000e 5B68     		ldr	r3, [r3, #4]
+ 469 0010 FB60     		str	r3, [r7, #12]
+ 470 0012 FB68     		ldr	r3, [r7, #12]
+ 471 0014 23F4E063 		bic	r3, r3, #1792
+ 472 0018 FB60     		str	r3, [r7, #12]
+ 473 001a FA68     		ldr	r2, [r7, #12]
+ 474 001c 7B68     		ldr	r3, [r7, #4]
+ 475 001e 1343     		orrs	r3, r3, r2
+ 476 0020 FB60     		str	r3, [r7, #12]
+ 477 0022 044A     		ldr	r2, .L40
+ 478 0024 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 9
+
+
+ 479 0026 5360     		str	r3, [r2, #4]
+ 480 0028 00BF     		nop
+ 481 002a 1437     		adds	r7, r7, #20
+ 482 002c BD46     		mov	sp, r7
+ 483              		@ sp needed
+ 484 002e 80BC     		pop	{r7}
+ 485 0030 7047     		bx	lr
+ 486              	.L41:
+ 487 0032 00BF     		.align	2
+ 488              	.L40:
+ 489 0034 00100240 		.word	1073876992
+ 491              		.section	.text.RCC_PCLK2Config,"ax",%progbits
+ 492              		.align	1
+ 493              		.global	RCC_PCLK2Config
+ 494              		.syntax unified
+ 495              		.thumb
+ 496              		.thumb_func
+ 498              	RCC_PCLK2Config:
+ 499              		@ args = 0, pretend = 0, frame = 16
+ 500              		@ frame_needed = 1, uses_anonymous_args = 0
+ 501              		@ link register save eliminated.
+ 502 0000 80B4     		push	{r7}
+ 503 0002 85B0     		sub	sp, sp, #20
+ 504 0004 00AF     		add	r7, sp, #0
+ 505 0006 7860     		str	r0, [r7, #4]
+ 506 0008 0023     		movs	r3, #0
+ 507 000a FB60     		str	r3, [r7, #12]
+ 508 000c 094B     		ldr	r3, .L43
+ 509 000e 5B68     		ldr	r3, [r3, #4]
+ 510 0010 FB60     		str	r3, [r7, #12]
+ 511 0012 FB68     		ldr	r3, [r7, #12]
+ 512 0014 23F46053 		bic	r3, r3, #14336
+ 513 0018 FB60     		str	r3, [r7, #12]
+ 514 001a 7B68     		ldr	r3, [r7, #4]
+ 515 001c DB00     		lsls	r3, r3, #3
+ 516 001e FA68     		ldr	r2, [r7, #12]
+ 517 0020 1343     		orrs	r3, r3, r2
+ 518 0022 FB60     		str	r3, [r7, #12]
+ 519 0024 034A     		ldr	r2, .L43
+ 520 0026 FB68     		ldr	r3, [r7, #12]
+ 521 0028 5360     		str	r3, [r2, #4]
+ 522 002a 00BF     		nop
+ 523 002c 1437     		adds	r7, r7, #20
+ 524 002e BD46     		mov	sp, r7
+ 525              		@ sp needed
+ 526 0030 80BC     		pop	{r7}
+ 527 0032 7047     		bx	lr
+ 528              	.L44:
+ 529              		.align	2
+ 530              	.L43:
+ 531 0034 00100240 		.word	1073876992
+ 533              		.section	.text.RCC_ITConfig,"ax",%progbits
+ 534              		.align	1
+ 535              		.global	RCC_ITConfig
+ 536              		.syntax unified
+ 537              		.thumb
+ 538              		.thumb_func
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 10
+
+
+ 540              	RCC_ITConfig:
+ 541              		@ args = 0, pretend = 0, frame = 8
+ 542              		@ frame_needed = 1, uses_anonymous_args = 0
+ 543              		@ link register save eliminated.
+ 544 0000 80B4     		push	{r7}
+ 545 0002 83B0     		sub	sp, sp, #12
+ 546 0004 00AF     		add	r7, sp, #0
+ 547 0006 0346     		mov	r3, r0
+ 548 0008 0A46     		mov	r2, r1
+ 549 000a FB71     		strb	r3, [r7, #7]
+ 550 000c 1346     		mov	r3, r2
+ 551 000e BB71     		strb	r3, [r7, #6]
+ 552 0010 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 553 0012 002B     		cmp	r3, #0
+ 554 0014 08D0     		beq	.L46
+ 555 0016 0C4B     		ldr	r3, .L49
+ 556 0018 1B78     		ldrb	r3, [r3]
+ 557 001a DAB2     		uxtb	r2, r3
+ 558 001c 0A49     		ldr	r1, .L49
+ 559 001e FB79     		ldrb	r3, [r7, #7]
+ 560 0020 1343     		orrs	r3, r3, r2
+ 561 0022 DBB2     		uxtb	r3, r3
+ 562 0024 0B70     		strb	r3, [r1]
+ 563 0026 09E0     		b	.L48
+ 564              	.L46:
+ 565 0028 074B     		ldr	r3, .L49
+ 566 002a 1B78     		ldrb	r3, [r3]
+ 567 002c DAB2     		uxtb	r2, r3
+ 568 002e FB79     		ldrb	r3, [r7, #7]
+ 569 0030 DB43     		mvns	r3, r3
+ 570 0032 DBB2     		uxtb	r3, r3
+ 571 0034 0449     		ldr	r1, .L49
+ 572 0036 1340     		ands	r3, r3, r2
+ 573 0038 DBB2     		uxtb	r3, r3
+ 574 003a 0B70     		strb	r3, [r1]
+ 575              	.L48:
+ 576 003c 00BF     		nop
+ 577 003e 0C37     		adds	r7, r7, #12
+ 578 0040 BD46     		mov	sp, r7
+ 579              		@ sp needed
+ 580 0042 80BC     		pop	{r7}
+ 581 0044 7047     		bx	lr
+ 582              	.L50:
+ 583 0046 00BF     		.align	2
+ 584              	.L49:
+ 585 0048 09100240 		.word	1073877001
+ 587              		.section	.text.RCC_USBCLKConfig,"ax",%progbits
+ 588              		.align	1
+ 589              		.global	RCC_USBCLKConfig
+ 590              		.syntax unified
+ 591              		.thumb
+ 592              		.thumb_func
+ 594              	RCC_USBCLKConfig:
+ 595              		@ args = 0, pretend = 0, frame = 8
+ 596              		@ frame_needed = 1, uses_anonymous_args = 0
+ 597              		@ link register save eliminated.
+ 598 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 11
+
+
+ 599 0002 83B0     		sub	sp, sp, #12
+ 600 0004 00AF     		add	r7, sp, #0
+ 601 0006 7860     		str	r0, [r7, #4]
+ 602 0008 034A     		ldr	r2, .L52
+ 603 000a 7B68     		ldr	r3, [r7, #4]
+ 604 000c 1360     		str	r3, [r2]
+ 605 000e 00BF     		nop
+ 606 0010 0C37     		adds	r7, r7, #12
+ 607 0012 BD46     		mov	sp, r7
+ 608              		@ sp needed
+ 609 0014 80BC     		pop	{r7}
+ 610 0016 7047     		bx	lr
+ 611              	.L53:
+ 612              		.align	2
+ 613              	.L52:
+ 614 0018 D8004242 		.word	1111621848
+ 616              		.section	.text.RCC_ADCCLKConfig,"ax",%progbits
+ 617              		.align	1
+ 618              		.global	RCC_ADCCLKConfig
+ 619              		.syntax unified
+ 620              		.thumb
+ 621              		.thumb_func
+ 623              	RCC_ADCCLKConfig:
+ 624              		@ args = 0, pretend = 0, frame = 16
+ 625              		@ frame_needed = 1, uses_anonymous_args = 0
+ 626              		@ link register save eliminated.
+ 627 0000 80B4     		push	{r7}
+ 628 0002 85B0     		sub	sp, sp, #20
+ 629 0004 00AF     		add	r7, sp, #0
+ 630 0006 7860     		str	r0, [r7, #4]
+ 631 0008 0023     		movs	r3, #0
+ 632 000a FB60     		str	r3, [r7, #12]
+ 633 000c 094B     		ldr	r3, .L55
+ 634 000e 5B68     		ldr	r3, [r3, #4]
+ 635 0010 FB60     		str	r3, [r7, #12]
+ 636 0012 FB68     		ldr	r3, [r7, #12]
+ 637 0014 23F44043 		bic	r3, r3, #49152
+ 638 0018 FB60     		str	r3, [r7, #12]
+ 639 001a FA68     		ldr	r2, [r7, #12]
+ 640 001c 7B68     		ldr	r3, [r7, #4]
+ 641 001e 1343     		orrs	r3, r3, r2
+ 642 0020 FB60     		str	r3, [r7, #12]
+ 643 0022 044A     		ldr	r2, .L55
+ 644 0024 FB68     		ldr	r3, [r7, #12]
+ 645 0026 5360     		str	r3, [r2, #4]
+ 646 0028 00BF     		nop
+ 647 002a 1437     		adds	r7, r7, #20
+ 648 002c BD46     		mov	sp, r7
+ 649              		@ sp needed
+ 650 002e 80BC     		pop	{r7}
+ 651 0030 7047     		bx	lr
+ 652              	.L56:
+ 653 0032 00BF     		.align	2
+ 654              	.L55:
+ 655 0034 00100240 		.word	1073876992
+ 657              		.section	.text.RCC_LSEConfig,"ax",%progbits
+ 658              		.align	1
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 12
+
+
+ 659              		.global	RCC_LSEConfig
+ 660              		.syntax unified
+ 661              		.thumb
+ 662              		.thumb_func
+ 664              	RCC_LSEConfig:
+ 665              		@ args = 0, pretend = 0, frame = 8
+ 666              		@ frame_needed = 1, uses_anonymous_args = 0
+ 667              		@ link register save eliminated.
+ 668 0000 80B4     		push	{r7}
+ 669 0002 83B0     		sub	sp, sp, #12
+ 670 0004 00AF     		add	r7, sp, #0
+ 671 0006 0346     		mov	r3, r0
+ 672 0008 FB71     		strb	r3, [r7, #7]
+ 673 000a 0C4B     		ldr	r3, .L62
+ 674 000c 0022     		movs	r2, #0
+ 675 000e 1A70     		strb	r2, [r3]
+ 676 0010 0A4B     		ldr	r3, .L62
+ 677 0012 0022     		movs	r2, #0
+ 678 0014 1A70     		strb	r2, [r3]
+ 679 0016 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 680 0018 012B     		cmp	r3, #1
+ 681 001a 02D0     		beq	.L58
+ 682 001c 042B     		cmp	r3, #4
+ 683 001e 04D0     		beq	.L59
+ 684 0020 07E0     		b	.L61
+ 685              	.L58:
+ 686 0022 064B     		ldr	r3, .L62
+ 687 0024 0122     		movs	r2, #1
+ 688 0026 1A70     		strb	r2, [r3]
+ 689 0028 03E0     		b	.L61
+ 690              	.L59:
+ 691 002a 044B     		ldr	r3, .L62
+ 692 002c 0522     		movs	r2, #5
+ 693 002e 1A70     		strb	r2, [r3]
+ 694 0030 00BF     		nop
+ 695              	.L61:
+ 696 0032 00BF     		nop
+ 697 0034 0C37     		adds	r7, r7, #12
+ 698 0036 BD46     		mov	sp, r7
+ 699              		@ sp needed
+ 700 0038 80BC     		pop	{r7}
+ 701 003a 7047     		bx	lr
+ 702              	.L63:
+ 703              		.align	2
+ 704              	.L62:
+ 705 003c 20100240 		.word	1073877024
+ 707              		.section	.text.RCC_LSICmd,"ax",%progbits
+ 708              		.align	1
+ 709              		.global	RCC_LSICmd
+ 710              		.syntax unified
+ 711              		.thumb
+ 712              		.thumb_func
+ 714              	RCC_LSICmd:
+ 715              		@ args = 0, pretend = 0, frame = 8
+ 716              		@ frame_needed = 1, uses_anonymous_args = 0
+ 717              		@ link register save eliminated.
+ 718 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 13
+
+
+ 719 0002 83B0     		sub	sp, sp, #12
+ 720 0004 00AF     		add	r7, sp, #0
+ 721 0006 0346     		mov	r3, r0
+ 722 0008 FB71     		strb	r3, [r7, #7]
+ 723 000a 044A     		ldr	r2, .L65
+ 724 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 725 000e 1360     		str	r3, [r2]
+ 726 0010 00BF     		nop
+ 727 0012 0C37     		adds	r7, r7, #12
+ 728 0014 BD46     		mov	sp, r7
+ 729              		@ sp needed
+ 730 0016 80BC     		pop	{r7}
+ 731 0018 7047     		bx	lr
+ 732              	.L66:
+ 733 001a 00BF     		.align	2
+ 734              	.L65:
+ 735 001c 80044242 		.word	1111622784
+ 737              		.section	.text.RCC_RTCCLKConfig,"ax",%progbits
+ 738              		.align	1
+ 739              		.global	RCC_RTCCLKConfig
+ 740              		.syntax unified
+ 741              		.thumb
+ 742              		.thumb_func
+ 744              	RCC_RTCCLKConfig:
+ 745              		@ args = 0, pretend = 0, frame = 8
+ 746              		@ frame_needed = 1, uses_anonymous_args = 0
+ 747              		@ link register save eliminated.
+ 748 0000 80B4     		push	{r7}
+ 749 0002 83B0     		sub	sp, sp, #12
+ 750 0004 00AF     		add	r7, sp, #0
+ 751 0006 7860     		str	r0, [r7, #4]
+ 752 0008 054B     		ldr	r3, .L68
+ 753 000a 1A6A     		ldr	r2, [r3, #32]
+ 754 000c 0449     		ldr	r1, .L68
+ 755 000e 7B68     		ldr	r3, [r7, #4]
+ 756 0010 1343     		orrs	r3, r3, r2
+ 757 0012 0B62     		str	r3, [r1, #32]
+ 758 0014 00BF     		nop
+ 759 0016 0C37     		adds	r7, r7, #12
+ 760 0018 BD46     		mov	sp, r7
+ 761              		@ sp needed
+ 762 001a 80BC     		pop	{r7}
+ 763 001c 7047     		bx	lr
+ 764              	.L69:
+ 765 001e 00BF     		.align	2
+ 766              	.L68:
+ 767 0020 00100240 		.word	1073876992
+ 769              		.section	.text.RCC_RTCCLKCmd,"ax",%progbits
+ 770              		.align	1
+ 771              		.global	RCC_RTCCLKCmd
+ 772              		.syntax unified
+ 773              		.thumb
+ 774              		.thumb_func
+ 776              	RCC_RTCCLKCmd:
+ 777              		@ args = 0, pretend = 0, frame = 8
+ 778              		@ frame_needed = 1, uses_anonymous_args = 0
+ 779              		@ link register save eliminated.
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 14
+
+
+ 780 0000 80B4     		push	{r7}
+ 781 0002 83B0     		sub	sp, sp, #12
+ 782 0004 00AF     		add	r7, sp, #0
+ 783 0006 0346     		mov	r3, r0
+ 784 0008 FB71     		strb	r3, [r7, #7]
+ 785 000a 044A     		ldr	r2, .L71
+ 786 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 787 000e 1360     		str	r3, [r2]
+ 788 0010 00BF     		nop
+ 789 0012 0C37     		adds	r7, r7, #12
+ 790 0014 BD46     		mov	sp, r7
+ 791              		@ sp needed
+ 792 0016 80BC     		pop	{r7}
+ 793 0018 7047     		bx	lr
+ 794              	.L72:
+ 795 001a 00BF     		.align	2
+ 796              	.L71:
+ 797 001c 3C044242 		.word	1111622716
+ 799              		.section	.text.RCC_GetClocksFreq,"ax",%progbits
+ 800              		.align	1
+ 801              		.global	RCC_GetClocksFreq
+ 802              		.syntax unified
+ 803              		.thumb
+ 804              		.thumb_func
+ 806              	RCC_GetClocksFreq:
+ 807              		@ args = 0, pretend = 0, frame = 24
+ 808              		@ frame_needed = 1, uses_anonymous_args = 0
+ 809              		@ link register save eliminated.
+ 810 0000 80B4     		push	{r7}
+ 811 0002 87B0     		sub	sp, sp, #28
+ 812 0004 00AF     		add	r7, sp, #0
+ 813 0006 7860     		str	r0, [r7, #4]
+ 814 0008 0023     		movs	r3, #0
+ 815 000a 7B61     		str	r3, [r7, #20]
+ 816 000c 0023     		movs	r3, #0
+ 817 000e 3B61     		str	r3, [r7, #16]
+ 818 0010 0023     		movs	r3, #0
+ 819 0012 FB60     		str	r3, [r7, #12]
+ 820 0014 0023     		movs	r3, #0
+ 821 0016 BB60     		str	r3, [r7, #8]
+ 822 0018 4F4B     		ldr	r3, .L82
+ 823 001a 5B68     		ldr	r3, [r3, #4]
+ 824 001c 03F00C03 		and	r3, r3, #12
+ 825 0020 7B61     		str	r3, [r7, #20]
+ 826 0022 7B69     		ldr	r3, [r7, #20]
+ 827 0024 082B     		cmp	r3, #8
+ 828 0026 11D0     		beq	.L74
+ 829 0028 7B69     		ldr	r3, [r7, #20]
+ 830 002a 082B     		cmp	r3, #8
+ 831 002c 3AD8     		bhi	.L75
+ 832 002e 7B69     		ldr	r3, [r7, #20]
+ 833 0030 002B     		cmp	r3, #0
+ 834 0032 03D0     		beq	.L76
+ 835 0034 7B69     		ldr	r3, [r7, #20]
+ 836 0036 042B     		cmp	r3, #4
+ 837 0038 04D0     		beq	.L77
+ 838 003a 33E0     		b	.L75
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 15
+
+
+ 839              	.L76:
+ 840 003c 7B68     		ldr	r3, [r7, #4]
+ 841 003e 474A     		ldr	r2, .L82+4
+ 842 0040 1A60     		str	r2, [r3]
+ 843 0042 33E0     		b	.L78
+ 844              	.L77:
+ 845 0044 7B68     		ldr	r3, [r7, #4]
+ 846 0046 454A     		ldr	r2, .L82+4
+ 847 0048 1A60     		str	r2, [r3]
+ 848 004a 2FE0     		b	.L78
+ 849              	.L74:
+ 850 004c 424B     		ldr	r3, .L82
+ 851 004e 5B68     		ldr	r3, [r3, #4]
+ 852 0050 03F47013 		and	r3, r3, #3932160
+ 853 0054 3B61     		str	r3, [r7, #16]
+ 854 0056 404B     		ldr	r3, .L82
+ 855 0058 5B68     		ldr	r3, [r3, #4]
+ 856 005a 03F48033 		and	r3, r3, #65536
+ 857 005e FB60     		str	r3, [r7, #12]
+ 858 0060 3B69     		ldr	r3, [r7, #16]
+ 859 0062 9B0C     		lsrs	r3, r3, #18
+ 860 0064 0233     		adds	r3, r3, #2
+ 861 0066 3B61     		str	r3, [r7, #16]
+ 862 0068 FB68     		ldr	r3, [r7, #12]
+ 863 006a 002B     		cmp	r3, #0
+ 864 006c 06D1     		bne	.L79
+ 865 006e 3B69     		ldr	r3, [r7, #16]
+ 866 0070 3B4A     		ldr	r2, .L82+8
+ 867 0072 03FB02F2 		mul	r2, r3, r2
+ 868 0076 7B68     		ldr	r3, [r7, #4]
+ 869 0078 1A60     		str	r2, [r3]
+ 870 007a 17E0     		b	.L78
+ 871              	.L79:
+ 872 007c 364B     		ldr	r3, .L82
+ 873 007e 5B68     		ldr	r3, [r3, #4]
+ 874 0080 03F40033 		and	r3, r3, #131072
+ 875 0084 002B     		cmp	r3, #0
+ 876 0086 06D0     		beq	.L81
+ 877 0088 3B69     		ldr	r3, [r7, #16]
+ 878 008a 354A     		ldr	r2, .L82+8
+ 879 008c 03FB02F2 		mul	r2, r3, r2
+ 880 0090 7B68     		ldr	r3, [r7, #4]
+ 881 0092 1A60     		str	r2, [r3]
+ 882 0094 0AE0     		b	.L78
+ 883              	.L81:
+ 884 0096 3B69     		ldr	r3, [r7, #16]
+ 885 0098 304A     		ldr	r2, .L82+4
+ 886 009a 03FB02F2 		mul	r2, r3, r2
+ 887 009e 7B68     		ldr	r3, [r7, #4]
+ 888 00a0 1A60     		str	r2, [r3]
+ 889 00a2 03E0     		b	.L78
+ 890              	.L75:
+ 891 00a4 7B68     		ldr	r3, [r7, #4]
+ 892 00a6 2D4A     		ldr	r2, .L82+4
+ 893 00a8 1A60     		str	r2, [r3]
+ 894 00aa 00BF     		nop
+ 895              	.L78:
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 16
+
+
+ 896 00ac 2A4B     		ldr	r3, .L82
+ 897 00ae 5B68     		ldr	r3, [r3, #4]
+ 898 00b0 03F0F003 		and	r3, r3, #240
+ 899 00b4 7B61     		str	r3, [r7, #20]
+ 900 00b6 7B69     		ldr	r3, [r7, #20]
+ 901 00b8 1B09     		lsrs	r3, r3, #4
+ 902 00ba 7B61     		str	r3, [r7, #20]
+ 903 00bc 294A     		ldr	r2, .L82+12
+ 904 00be 7B69     		ldr	r3, [r7, #20]
+ 905 00c0 1344     		add	r3, r3, r2
+ 906 00c2 1B78     		ldrb	r3, [r3]
+ 907 00c4 DBB2     		uxtb	r3, r3
+ 908 00c6 BB60     		str	r3, [r7, #8]
+ 909 00c8 7B68     		ldr	r3, [r7, #4]
+ 910 00ca 1A68     		ldr	r2, [r3]
+ 911 00cc BB68     		ldr	r3, [r7, #8]
+ 912 00ce DA40     		lsrs	r2, r2, r3
+ 913 00d0 7B68     		ldr	r3, [r7, #4]
+ 914 00d2 5A60     		str	r2, [r3, #4]
+ 915 00d4 204B     		ldr	r3, .L82
+ 916 00d6 5B68     		ldr	r3, [r3, #4]
+ 917 00d8 03F4E063 		and	r3, r3, #1792
+ 918 00dc 7B61     		str	r3, [r7, #20]
+ 919 00de 7B69     		ldr	r3, [r7, #20]
+ 920 00e0 1B0A     		lsrs	r3, r3, #8
+ 921 00e2 7B61     		str	r3, [r7, #20]
+ 922 00e4 1F4A     		ldr	r2, .L82+12
+ 923 00e6 7B69     		ldr	r3, [r7, #20]
+ 924 00e8 1344     		add	r3, r3, r2
+ 925 00ea 1B78     		ldrb	r3, [r3]
+ 926 00ec DBB2     		uxtb	r3, r3
+ 927 00ee BB60     		str	r3, [r7, #8]
+ 928 00f0 7B68     		ldr	r3, [r7, #4]
+ 929 00f2 5A68     		ldr	r2, [r3, #4]
+ 930 00f4 BB68     		ldr	r3, [r7, #8]
+ 931 00f6 DA40     		lsrs	r2, r2, r3
+ 932 00f8 7B68     		ldr	r3, [r7, #4]
+ 933 00fa 9A60     		str	r2, [r3, #8]
+ 934 00fc 164B     		ldr	r3, .L82
+ 935 00fe 5B68     		ldr	r3, [r3, #4]
+ 936 0100 03F46053 		and	r3, r3, #14336
+ 937 0104 7B61     		str	r3, [r7, #20]
+ 938 0106 7B69     		ldr	r3, [r7, #20]
+ 939 0108 DB0A     		lsrs	r3, r3, #11
+ 940 010a 7B61     		str	r3, [r7, #20]
+ 941 010c 154A     		ldr	r2, .L82+12
+ 942 010e 7B69     		ldr	r3, [r7, #20]
+ 943 0110 1344     		add	r3, r3, r2
+ 944 0112 1B78     		ldrb	r3, [r3]
+ 945 0114 DBB2     		uxtb	r3, r3
+ 946 0116 BB60     		str	r3, [r7, #8]
+ 947 0118 7B68     		ldr	r3, [r7, #4]
+ 948 011a 5A68     		ldr	r2, [r3, #4]
+ 949 011c BB68     		ldr	r3, [r7, #8]
+ 950 011e DA40     		lsrs	r2, r2, r3
+ 951 0120 7B68     		ldr	r3, [r7, #4]
+ 952 0122 DA60     		str	r2, [r3, #12]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 17
+
+
+ 953 0124 0C4B     		ldr	r3, .L82
+ 954 0126 5B68     		ldr	r3, [r3, #4]
+ 955 0128 03F44043 		and	r3, r3, #49152
+ 956 012c 7B61     		str	r3, [r7, #20]
+ 957 012e 7B69     		ldr	r3, [r7, #20]
+ 958 0130 9B0B     		lsrs	r3, r3, #14
+ 959 0132 7B61     		str	r3, [r7, #20]
+ 960 0134 0C4A     		ldr	r2, .L82+16
+ 961 0136 7B69     		ldr	r3, [r7, #20]
+ 962 0138 1344     		add	r3, r3, r2
+ 963 013a 1B78     		ldrb	r3, [r3]
+ 964 013c DBB2     		uxtb	r3, r3
+ 965 013e BB60     		str	r3, [r7, #8]
+ 966 0140 7B68     		ldr	r3, [r7, #4]
+ 967 0142 DA68     		ldr	r2, [r3, #12]
+ 968 0144 BB68     		ldr	r3, [r7, #8]
+ 969 0146 B2FBF3F2 		udiv	r2, r2, r3
+ 970 014a 7B68     		ldr	r3, [r7, #4]
+ 971 014c 1A61     		str	r2, [r3, #16]
+ 972 014e 00BF     		nop
+ 973 0150 1C37     		adds	r7, r7, #28
+ 974 0152 BD46     		mov	sp, r7
+ 975              		@ sp needed
+ 976 0154 80BC     		pop	{r7}
+ 977 0156 7047     		bx	lr
+ 978              	.L83:
+ 979              		.align	2
+ 980              	.L82:
+ 981 0158 00100240 		.word	1073876992
+ 982 015c 00127A00 		.word	8000000
+ 983 0160 00093D00 		.word	4000000
+ 984 0164 00000000 		.word	APBAHBPrescTable
+ 985 0168 00000000 		.word	ADCPrescTable
+ 987              		.section	.text.RCC_AHBPeriphClockCmd,"ax",%progbits
+ 988              		.align	1
+ 989              		.global	RCC_AHBPeriphClockCmd
+ 990              		.syntax unified
+ 991              		.thumb
+ 992              		.thumb_func
+ 994              	RCC_AHBPeriphClockCmd:
+ 995              		@ args = 0, pretend = 0, frame = 8
+ 996              		@ frame_needed = 1, uses_anonymous_args = 0
+ 997              		@ link register save eliminated.
+ 998 0000 80B4     		push	{r7}
+ 999 0002 83B0     		sub	sp, sp, #12
+ 1000 0004 00AF     		add	r7, sp, #0
+ 1001 0006 7860     		str	r0, [r7, #4]
+ 1002 0008 0B46     		mov	r3, r1
+ 1003 000a FB70     		strb	r3, [r7, #3]
+ 1004 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1005 000e 002B     		cmp	r3, #0
+ 1006 0010 06D0     		beq	.L85
+ 1007 0012 094B     		ldr	r3, .L88
+ 1008 0014 5A69     		ldr	r2, [r3, #20]
+ 1009 0016 0849     		ldr	r1, .L88
+ 1010 0018 7B68     		ldr	r3, [r7, #4]
+ 1011 001a 1343     		orrs	r3, r3, r2
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 18
+
+
+ 1012 001c 4B61     		str	r3, [r1, #20]
+ 1013 001e 06E0     		b	.L87
+ 1014              	.L85:
+ 1015 0020 054B     		ldr	r3, .L88
+ 1016 0022 5A69     		ldr	r2, [r3, #20]
+ 1017 0024 7B68     		ldr	r3, [r7, #4]
+ 1018 0026 DB43     		mvns	r3, r3
+ 1019 0028 0349     		ldr	r1, .L88
+ 1020 002a 1340     		ands	r3, r3, r2
+ 1021 002c 4B61     		str	r3, [r1, #20]
+ 1022              	.L87:
+ 1023 002e 00BF     		nop
+ 1024 0030 0C37     		adds	r7, r7, #12
+ 1025 0032 BD46     		mov	sp, r7
+ 1026              		@ sp needed
+ 1027 0034 80BC     		pop	{r7}
+ 1028 0036 7047     		bx	lr
+ 1029              	.L89:
+ 1030              		.align	2
+ 1031              	.L88:
+ 1032 0038 00100240 		.word	1073876992
+ 1034              		.section	.text.RCC_APB2PeriphClockCmd,"ax",%progbits
+ 1035              		.align	1
+ 1036              		.global	RCC_APB2PeriphClockCmd
+ 1037              		.syntax unified
+ 1038              		.thumb
+ 1039              		.thumb_func
+ 1041              	RCC_APB2PeriphClockCmd:
+ 1042              		@ args = 0, pretend = 0, frame = 8
+ 1043              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1044              		@ link register save eliminated.
+ 1045 0000 80B4     		push	{r7}
+ 1046 0002 83B0     		sub	sp, sp, #12
+ 1047 0004 00AF     		add	r7, sp, #0
+ 1048 0006 7860     		str	r0, [r7, #4]
+ 1049 0008 0B46     		mov	r3, r1
+ 1050 000a FB70     		strb	r3, [r7, #3]
+ 1051 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1052 000e 002B     		cmp	r3, #0
+ 1053 0010 06D0     		beq	.L91
+ 1054 0012 094B     		ldr	r3, .L94
+ 1055 0014 9A69     		ldr	r2, [r3, #24]
+ 1056 0016 0849     		ldr	r1, .L94
+ 1057 0018 7B68     		ldr	r3, [r7, #4]
+ 1058 001a 1343     		orrs	r3, r3, r2
+ 1059 001c 8B61     		str	r3, [r1, #24]
+ 1060 001e 06E0     		b	.L93
+ 1061              	.L91:
+ 1062 0020 054B     		ldr	r3, .L94
+ 1063 0022 9A69     		ldr	r2, [r3, #24]
+ 1064 0024 7B68     		ldr	r3, [r7, #4]
+ 1065 0026 DB43     		mvns	r3, r3
+ 1066 0028 0349     		ldr	r1, .L94
+ 1067 002a 1340     		ands	r3, r3, r2
+ 1068 002c 8B61     		str	r3, [r1, #24]
+ 1069              	.L93:
+ 1070 002e 00BF     		nop
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 19
+
+
+ 1071 0030 0C37     		adds	r7, r7, #12
+ 1072 0032 BD46     		mov	sp, r7
+ 1073              		@ sp needed
+ 1074 0034 80BC     		pop	{r7}
+ 1075 0036 7047     		bx	lr
+ 1076              	.L95:
+ 1077              		.align	2
+ 1078              	.L94:
+ 1079 0038 00100240 		.word	1073876992
+ 1081              		.section	.text.RCC_APB1PeriphClockCmd,"ax",%progbits
+ 1082              		.align	1
+ 1083              		.global	RCC_APB1PeriphClockCmd
+ 1084              		.syntax unified
+ 1085              		.thumb
+ 1086              		.thumb_func
+ 1088              	RCC_APB1PeriphClockCmd:
+ 1089              		@ args = 0, pretend = 0, frame = 8
+ 1090              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1091              		@ link register save eliminated.
+ 1092 0000 80B4     		push	{r7}
+ 1093 0002 83B0     		sub	sp, sp, #12
+ 1094 0004 00AF     		add	r7, sp, #0
+ 1095 0006 7860     		str	r0, [r7, #4]
+ 1096 0008 0B46     		mov	r3, r1
+ 1097 000a FB70     		strb	r3, [r7, #3]
+ 1098 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1099 000e 002B     		cmp	r3, #0
+ 1100 0010 06D0     		beq	.L97
+ 1101 0012 094B     		ldr	r3, .L100
+ 1102 0014 DA69     		ldr	r2, [r3, #28]
+ 1103 0016 0849     		ldr	r1, .L100
+ 1104 0018 7B68     		ldr	r3, [r7, #4]
+ 1105 001a 1343     		orrs	r3, r3, r2
+ 1106 001c CB61     		str	r3, [r1, #28]
+ 1107 001e 06E0     		b	.L99
+ 1108              	.L97:
+ 1109 0020 054B     		ldr	r3, .L100
+ 1110 0022 DA69     		ldr	r2, [r3, #28]
+ 1111 0024 7B68     		ldr	r3, [r7, #4]
+ 1112 0026 DB43     		mvns	r3, r3
+ 1113 0028 0349     		ldr	r1, .L100
+ 1114 002a 1340     		ands	r3, r3, r2
+ 1115 002c CB61     		str	r3, [r1, #28]
+ 1116              	.L99:
+ 1117 002e 00BF     		nop
+ 1118 0030 0C37     		adds	r7, r7, #12
+ 1119 0032 BD46     		mov	sp, r7
+ 1120              		@ sp needed
+ 1121 0034 80BC     		pop	{r7}
+ 1122 0036 7047     		bx	lr
+ 1123              	.L101:
+ 1124              		.align	2
+ 1125              	.L100:
+ 1126 0038 00100240 		.word	1073876992
+ 1128              		.section	.text.RCC_APB2PeriphResetCmd,"ax",%progbits
+ 1129              		.align	1
+ 1130              		.global	RCC_APB2PeriphResetCmd
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 20
+
+
+ 1131              		.syntax unified
+ 1132              		.thumb
+ 1133              		.thumb_func
+ 1135              	RCC_APB2PeriphResetCmd:
+ 1136              		@ args = 0, pretend = 0, frame = 8
+ 1137              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1138              		@ link register save eliminated.
+ 1139 0000 80B4     		push	{r7}
+ 1140 0002 83B0     		sub	sp, sp, #12
+ 1141 0004 00AF     		add	r7, sp, #0
+ 1142 0006 7860     		str	r0, [r7, #4]
+ 1143 0008 0B46     		mov	r3, r1
+ 1144 000a FB70     		strb	r3, [r7, #3]
+ 1145 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1146 000e 002B     		cmp	r3, #0
+ 1147 0010 06D0     		beq	.L103
+ 1148 0012 094B     		ldr	r3, .L106
+ 1149 0014 DA68     		ldr	r2, [r3, #12]
+ 1150 0016 0849     		ldr	r1, .L106
+ 1151 0018 7B68     		ldr	r3, [r7, #4]
+ 1152 001a 1343     		orrs	r3, r3, r2
+ 1153 001c CB60     		str	r3, [r1, #12]
+ 1154 001e 06E0     		b	.L105
+ 1155              	.L103:
+ 1156 0020 054B     		ldr	r3, .L106
+ 1157 0022 DA68     		ldr	r2, [r3, #12]
+ 1158 0024 7B68     		ldr	r3, [r7, #4]
+ 1159 0026 DB43     		mvns	r3, r3
+ 1160 0028 0349     		ldr	r1, .L106
+ 1161 002a 1340     		ands	r3, r3, r2
+ 1162 002c CB60     		str	r3, [r1, #12]
+ 1163              	.L105:
+ 1164 002e 00BF     		nop
+ 1165 0030 0C37     		adds	r7, r7, #12
+ 1166 0032 BD46     		mov	sp, r7
+ 1167              		@ sp needed
+ 1168 0034 80BC     		pop	{r7}
+ 1169 0036 7047     		bx	lr
+ 1170              	.L107:
+ 1171              		.align	2
+ 1172              	.L106:
+ 1173 0038 00100240 		.word	1073876992
+ 1175              		.section	.text.RCC_APB1PeriphResetCmd,"ax",%progbits
+ 1176              		.align	1
+ 1177              		.global	RCC_APB1PeriphResetCmd
+ 1178              		.syntax unified
+ 1179              		.thumb
+ 1180              		.thumb_func
+ 1182              	RCC_APB1PeriphResetCmd:
+ 1183              		@ args = 0, pretend = 0, frame = 8
+ 1184              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1185              		@ link register save eliminated.
+ 1186 0000 80B4     		push	{r7}
+ 1187 0002 83B0     		sub	sp, sp, #12
+ 1188 0004 00AF     		add	r7, sp, #0
+ 1189 0006 7860     		str	r0, [r7, #4]
+ 1190 0008 0B46     		mov	r3, r1
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 21
+
+
+ 1191 000a FB70     		strb	r3, [r7, #3]
+ 1192 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1193 000e 002B     		cmp	r3, #0
+ 1194 0010 06D0     		beq	.L109
+ 1195 0012 094B     		ldr	r3, .L112
+ 1196 0014 1A69     		ldr	r2, [r3, #16]
+ 1197 0016 0849     		ldr	r1, .L112
+ 1198 0018 7B68     		ldr	r3, [r7, #4]
+ 1199 001a 1343     		orrs	r3, r3, r2
+ 1200 001c 0B61     		str	r3, [r1, #16]
+ 1201 001e 06E0     		b	.L111
+ 1202              	.L109:
+ 1203 0020 054B     		ldr	r3, .L112
+ 1204 0022 1A69     		ldr	r2, [r3, #16]
+ 1205 0024 7B68     		ldr	r3, [r7, #4]
+ 1206 0026 DB43     		mvns	r3, r3
+ 1207 0028 0349     		ldr	r1, .L112
+ 1208 002a 1340     		ands	r3, r3, r2
+ 1209 002c 0B61     		str	r3, [r1, #16]
+ 1210              	.L111:
+ 1211 002e 00BF     		nop
+ 1212 0030 0C37     		adds	r7, r7, #12
+ 1213 0032 BD46     		mov	sp, r7
+ 1214              		@ sp needed
+ 1215 0034 80BC     		pop	{r7}
+ 1216 0036 7047     		bx	lr
+ 1217              	.L113:
+ 1218              		.align	2
+ 1219              	.L112:
+ 1220 0038 00100240 		.word	1073876992
+ 1222              		.section	.text.RCC_BackupResetCmd,"ax",%progbits
+ 1223              		.align	1
+ 1224              		.global	RCC_BackupResetCmd
+ 1225              		.syntax unified
+ 1226              		.thumb
+ 1227              		.thumb_func
+ 1229              	RCC_BackupResetCmd:
+ 1230              		@ args = 0, pretend = 0, frame = 8
+ 1231              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1232              		@ link register save eliminated.
+ 1233 0000 80B4     		push	{r7}
+ 1234 0002 83B0     		sub	sp, sp, #12
+ 1235 0004 00AF     		add	r7, sp, #0
+ 1236 0006 0346     		mov	r3, r0
+ 1237 0008 FB71     		strb	r3, [r7, #7]
+ 1238 000a 044A     		ldr	r2, .L115
+ 1239 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1240 000e 1360     		str	r3, [r2]
+ 1241 0010 00BF     		nop
+ 1242 0012 0C37     		adds	r7, r7, #12
+ 1243 0014 BD46     		mov	sp, r7
+ 1244              		@ sp needed
+ 1245 0016 80BC     		pop	{r7}
+ 1246 0018 7047     		bx	lr
+ 1247              	.L116:
+ 1248 001a 00BF     		.align	2
+ 1249              	.L115:
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 22
+
+
+ 1250 001c 40044242 		.word	1111622720
+ 1252              		.section	.text.RCC_ClockSecuritySystemCmd,"ax",%progbits
+ 1253              		.align	1
+ 1254              		.global	RCC_ClockSecuritySystemCmd
+ 1255              		.syntax unified
+ 1256              		.thumb
+ 1257              		.thumb_func
+ 1259              	RCC_ClockSecuritySystemCmd:
+ 1260              		@ args = 0, pretend = 0, frame = 8
+ 1261              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1262              		@ link register save eliminated.
+ 1263 0000 80B4     		push	{r7}
+ 1264 0002 83B0     		sub	sp, sp, #12
+ 1265 0004 00AF     		add	r7, sp, #0
+ 1266 0006 0346     		mov	r3, r0
+ 1267 0008 FB71     		strb	r3, [r7, #7]
+ 1268 000a 044A     		ldr	r2, .L118
+ 1269 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1270 000e 1360     		str	r3, [r2]
+ 1271 0010 00BF     		nop
+ 1272 0012 0C37     		adds	r7, r7, #12
+ 1273 0014 BD46     		mov	sp, r7
+ 1274              		@ sp needed
+ 1275 0016 80BC     		pop	{r7}
+ 1276 0018 7047     		bx	lr
+ 1277              	.L119:
+ 1278 001a 00BF     		.align	2
+ 1279              	.L118:
+ 1280 001c 4C004242 		.word	1111621708
+ 1282              		.section	.text.RCC_MCOConfig,"ax",%progbits
+ 1283              		.align	1
+ 1284              		.global	RCC_MCOConfig
+ 1285              		.syntax unified
+ 1286              		.thumb
+ 1287              		.thumb_func
+ 1289              	RCC_MCOConfig:
+ 1290              		@ args = 0, pretend = 0, frame = 8
+ 1291              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1292              		@ link register save eliminated.
+ 1293 0000 80B4     		push	{r7}
+ 1294 0002 83B0     		sub	sp, sp, #12
+ 1295 0004 00AF     		add	r7, sp, #0
+ 1296 0006 0346     		mov	r3, r0
+ 1297 0008 FB71     		strb	r3, [r7, #7]
+ 1298 000a 044A     		ldr	r2, .L121
+ 1299 000c FB79     		ldrb	r3, [r7, #7]
+ 1300 000e 1370     		strb	r3, [r2]
+ 1301 0010 00BF     		nop
+ 1302 0012 0C37     		adds	r7, r7, #12
+ 1303 0014 BD46     		mov	sp, r7
+ 1304              		@ sp needed
+ 1305 0016 80BC     		pop	{r7}
+ 1306 0018 7047     		bx	lr
+ 1307              	.L122:
+ 1308 001a 00BF     		.align	2
+ 1309              	.L121:
+ 1310 001c 07100240 		.word	1073876999
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 23
+
+
+ 1312              		.section	.text.RCC_GetFlagStatus,"ax",%progbits
+ 1313              		.align	1
+ 1314              		.global	RCC_GetFlagStatus
+ 1315              		.syntax unified
+ 1316              		.thumb
+ 1317              		.thumb_func
+ 1319              	RCC_GetFlagStatus:
+ 1320              		@ args = 0, pretend = 0, frame = 24
+ 1321              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1322              		@ link register save eliminated.
+ 1323 0000 80B4     		push	{r7}
+ 1324 0002 87B0     		sub	sp, sp, #28
+ 1325 0004 00AF     		add	r7, sp, #0
+ 1326 0006 0346     		mov	r3, r0
+ 1327 0008 FB71     		strb	r3, [r7, #7]
+ 1328 000a 0023     		movs	r3, #0
+ 1329 000c FB60     		str	r3, [r7, #12]
+ 1330 000e 0023     		movs	r3, #0
+ 1331 0010 7B61     		str	r3, [r7, #20]
+ 1332 0012 0023     		movs	r3, #0
+ 1333 0014 FB74     		strb	r3, [r7, #19]
+ 1334 0016 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1335 0018 5B09     		lsrs	r3, r3, #5
+ 1336 001a DBB2     		uxtb	r3, r3
+ 1337 001c FB60     		str	r3, [r7, #12]
+ 1338 001e FB68     		ldr	r3, [r7, #12]
+ 1339 0020 012B     		cmp	r3, #1
+ 1340 0022 03D1     		bne	.L124
+ 1341 0024 124B     		ldr	r3, .L130
+ 1342 0026 1B68     		ldr	r3, [r3]
+ 1343 0028 7B61     		str	r3, [r7, #20]
+ 1344 002a 09E0     		b	.L125
+ 1345              	.L124:
+ 1346 002c FB68     		ldr	r3, [r7, #12]
+ 1347 002e 022B     		cmp	r3, #2
+ 1348 0030 03D1     		bne	.L126
+ 1349 0032 0F4B     		ldr	r3, .L130
+ 1350 0034 1B6A     		ldr	r3, [r3, #32]
+ 1351 0036 7B61     		str	r3, [r7, #20]
+ 1352 0038 02E0     		b	.L125
+ 1353              	.L126:
+ 1354 003a 0D4B     		ldr	r3, .L130
+ 1355 003c 5B6A     		ldr	r3, [r3, #36]
+ 1356 003e 7B61     		str	r3, [r7, #20]
+ 1357              	.L125:
+ 1358 0040 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1359 0042 03F01F03 		and	r3, r3, #31
+ 1360 0046 FB60     		str	r3, [r7, #12]
+ 1361 0048 7A69     		ldr	r2, [r7, #20]
+ 1362 004a FB68     		ldr	r3, [r7, #12]
+ 1363 004c 22FA03F3 		lsr	r3, r2, r3
+ 1364 0050 03F00103 		and	r3, r3, #1
+ 1365 0054 002B     		cmp	r3, #0
+ 1366 0056 02D0     		beq	.L127
+ 1367 0058 0123     		movs	r3, #1
+ 1368 005a FB74     		strb	r3, [r7, #19]
+ 1369 005c 01E0     		b	.L128
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 24
+
+
+ 1370              	.L127:
+ 1371 005e 0023     		movs	r3, #0
+ 1372 0060 FB74     		strb	r3, [r7, #19]
+ 1373              	.L128:
+ 1374 0062 FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 1375 0064 1846     		mov	r0, r3
+ 1376 0066 1C37     		adds	r7, r7, #28
+ 1377 0068 BD46     		mov	sp, r7
+ 1378              		@ sp needed
+ 1379 006a 80BC     		pop	{r7}
+ 1380 006c 7047     		bx	lr
+ 1381              	.L131:
+ 1382 006e 00BF     		.align	2
+ 1383              	.L130:
+ 1384 0070 00100240 		.word	1073876992
+ 1386              		.section	.text.RCC_ClearFlag,"ax",%progbits
+ 1387              		.align	1
+ 1388              		.global	RCC_ClearFlag
+ 1389              		.syntax unified
+ 1390              		.thumb
+ 1391              		.thumb_func
+ 1393              	RCC_ClearFlag:
+ 1394              		@ args = 0, pretend = 0, frame = 0
+ 1395              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1396              		@ link register save eliminated.
+ 1397 0000 80B4     		push	{r7}
+ 1398 0002 00AF     		add	r7, sp, #0
+ 1399 0004 044B     		ldr	r3, .L133
+ 1400 0006 5B6A     		ldr	r3, [r3, #36]
+ 1401 0008 034A     		ldr	r2, .L133
+ 1402 000a 43F08073 		orr	r3, r3, #16777216
+ 1403 000e 5362     		str	r3, [r2, #36]
+ 1404 0010 00BF     		nop
+ 1405 0012 BD46     		mov	sp, r7
+ 1406              		@ sp needed
+ 1407 0014 80BC     		pop	{r7}
+ 1408 0016 7047     		bx	lr
+ 1409              	.L134:
+ 1410              		.align	2
+ 1411              	.L133:
+ 1412 0018 00100240 		.word	1073876992
+ 1414              		.section	.text.RCC_GetITStatus,"ax",%progbits
+ 1415              		.align	1
+ 1416              		.global	RCC_GetITStatus
+ 1417              		.syntax unified
+ 1418              		.thumb
+ 1419              		.thumb_func
+ 1421              	RCC_GetITStatus:
+ 1422              		@ args = 0, pretend = 0, frame = 16
+ 1423              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1424              		@ link register save eliminated.
+ 1425 0000 80B4     		push	{r7}
+ 1426 0002 85B0     		sub	sp, sp, #20
+ 1427 0004 00AF     		add	r7, sp, #0
+ 1428 0006 0346     		mov	r3, r0
+ 1429 0008 FB71     		strb	r3, [r7, #7]
+ 1430 000a 0023     		movs	r3, #0
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 25
+
+
+ 1431 000c FB73     		strb	r3, [r7, #15]
+ 1432 000e 084B     		ldr	r3, .L139
+ 1433 0010 9A68     		ldr	r2, [r3, #8]
+ 1434 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1435 0014 1340     		ands	r3, r3, r2
+ 1436 0016 002B     		cmp	r3, #0
+ 1437 0018 02D0     		beq	.L136
+ 1438 001a 0123     		movs	r3, #1
+ 1439 001c FB73     		strb	r3, [r7, #15]
+ 1440 001e 01E0     		b	.L137
+ 1441              	.L136:
+ 1442 0020 0023     		movs	r3, #0
+ 1443 0022 FB73     		strb	r3, [r7, #15]
+ 1444              	.L137:
+ 1445 0024 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 1446 0026 1846     		mov	r0, r3
+ 1447 0028 1437     		adds	r7, r7, #20
+ 1448 002a BD46     		mov	sp, r7
+ 1449              		@ sp needed
+ 1450 002c 80BC     		pop	{r7}
+ 1451 002e 7047     		bx	lr
+ 1452              	.L140:
+ 1453              		.align	2
+ 1454              	.L139:
+ 1455 0030 00100240 		.word	1073876992
+ 1457              		.section	.text.RCC_ClearITPendingBit,"ax",%progbits
+ 1458              		.align	1
+ 1459              		.global	RCC_ClearITPendingBit
+ 1460              		.syntax unified
+ 1461              		.thumb
+ 1462              		.thumb_func
+ 1464              	RCC_ClearITPendingBit:
+ 1465              		@ args = 0, pretend = 0, frame = 8
+ 1466              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1467              		@ link register save eliminated.
+ 1468 0000 80B4     		push	{r7}
+ 1469 0002 83B0     		sub	sp, sp, #12
+ 1470 0004 00AF     		add	r7, sp, #0
+ 1471 0006 0346     		mov	r3, r0
+ 1472 0008 FB71     		strb	r3, [r7, #7]
+ 1473 000a 044A     		ldr	r2, .L142
+ 1474 000c FB79     		ldrb	r3, [r7, #7]
+ 1475 000e 1370     		strb	r3, [r2]
+ 1476 0010 00BF     		nop
+ 1477 0012 0C37     		adds	r7, r7, #12
+ 1478 0014 BD46     		mov	sp, r7
+ 1479              		@ sp needed
+ 1480 0016 80BC     		pop	{r7}
+ 1481 0018 7047     		bx	lr
+ 1482              	.L143:
+ 1483 001a 00BF     		.align	2
+ 1484              	.L142:
+ 1485 001c 0A100240 		.word	1073877002
+ 1487              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 26
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f10x_rcc.c
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:16     .data.APBAHBPrescTable:00000000 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:19     .data.APBAHBPrescTable:00000000 APBAHBPrescTable
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:23     .data.ADCPrescTable:00000000 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:26     .data.ADCPrescTable:00000000 ADCPrescTable
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:29     .text.RCC_DeInit:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:35     .text.RCC_DeInit:00000000 RCC_DeInit
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:79     .text.RCC_DeInit:00000054 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:83     .text.RCC_HSEConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:89     .text.RCC_HSEConfig:00000000 RCC_HSEConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:138    .text.RCC_HSEConfig:00000058 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:141    .text.RCC_WaitForHSEStartUp:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:147    .text.RCC_WaitForHSEStartUp:00000000 RCC_WaitForHSEStartUp
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1319   .text.RCC_GetFlagStatus:00000000 RCC_GetFlagStatus
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:194    .text.RCC_AdjustHSICalibrationValue:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:200    .text.RCC_AdjustHSICalibrationValue:00000000 RCC_AdjustHSICalibrationValue
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:234    .text.RCC_AdjustHSICalibrationValue:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:237    .text.RCC_HSICmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:243    .text.RCC_HSICmd:00000000 RCC_HSICmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:264    .text.RCC_HSICmd:0000001c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:267    .text.RCC_PLLConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:273    .text.RCC_PLLConfig:00000000 RCC_PLLConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:308    .text.RCC_PLLConfig:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:311    .text.RCC_PLLCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:317    .text.RCC_PLLCmd:00000000 RCC_PLLCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:338    .text.RCC_PLLCmd:0000001c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:341    .text.RCC_SYSCLKConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:347    .text.RCC_SYSCLKConfig:00000000 RCC_SYSCLKConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:379    .text.RCC_SYSCLKConfig:00000034 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:382    .text.RCC_GetSYSCLKSource:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:388    .text.RCC_GetSYSCLKSource:00000000 RCC_GetSYSCLKSource
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:407    .text.RCC_GetSYSCLKSource:00000018 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:410    .text.RCC_HCLKConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:416    .text.RCC_HCLKConfig:00000000 RCC_HCLKConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:448    .text.RCC_HCLKConfig:00000034 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:451    .text.RCC_PCLK1Config:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:457    .text.RCC_PCLK1Config:00000000 RCC_PCLK1Config
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:489    .text.RCC_PCLK1Config:00000034 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:492    .text.RCC_PCLK2Config:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:498    .text.RCC_PCLK2Config:00000000 RCC_PCLK2Config
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:531    .text.RCC_PCLK2Config:00000034 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:534    .text.RCC_ITConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:540    .text.RCC_ITConfig:00000000 RCC_ITConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:585    .text.RCC_ITConfig:00000048 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:588    .text.RCC_USBCLKConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:594    .text.RCC_USBCLKConfig:00000000 RCC_USBCLKConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:614    .text.RCC_USBCLKConfig:00000018 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:617    .text.RCC_ADCCLKConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:623    .text.RCC_ADCCLKConfig:00000000 RCC_ADCCLKConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:655    .text.RCC_ADCCLKConfig:00000034 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:658    .text.RCC_LSEConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:664    .text.RCC_LSEConfig:00000000 RCC_LSEConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:705    .text.RCC_LSEConfig:0000003c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:708    .text.RCC_LSICmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:714    .text.RCC_LSICmd:00000000 RCC_LSICmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:735    .text.RCC_LSICmd:0000001c $d
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s 			page 27
+
+
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:738    .text.RCC_RTCCLKConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:744    .text.RCC_RTCCLKConfig:00000000 RCC_RTCCLKConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:767    .text.RCC_RTCCLKConfig:00000020 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:770    .text.RCC_RTCCLKCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:776    .text.RCC_RTCCLKCmd:00000000 RCC_RTCCLKCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:797    .text.RCC_RTCCLKCmd:0000001c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:800    .text.RCC_GetClocksFreq:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:806    .text.RCC_GetClocksFreq:00000000 RCC_GetClocksFreq
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:981    .text.RCC_GetClocksFreq:00000158 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:988    .text.RCC_AHBPeriphClockCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:994    .text.RCC_AHBPeriphClockCmd:00000000 RCC_AHBPeriphClockCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1032   .text.RCC_AHBPeriphClockCmd:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1035   .text.RCC_APB2PeriphClockCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1041   .text.RCC_APB2PeriphClockCmd:00000000 RCC_APB2PeriphClockCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1079   .text.RCC_APB2PeriphClockCmd:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1082   .text.RCC_APB1PeriphClockCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1088   .text.RCC_APB1PeriphClockCmd:00000000 RCC_APB1PeriphClockCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1126   .text.RCC_APB1PeriphClockCmd:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1129   .text.RCC_APB2PeriphResetCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1135   .text.RCC_APB2PeriphResetCmd:00000000 RCC_APB2PeriphResetCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1173   .text.RCC_APB2PeriphResetCmd:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1176   .text.RCC_APB1PeriphResetCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1182   .text.RCC_APB1PeriphResetCmd:00000000 RCC_APB1PeriphResetCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1220   .text.RCC_APB1PeriphResetCmd:00000038 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1223   .text.RCC_BackupResetCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1229   .text.RCC_BackupResetCmd:00000000 RCC_BackupResetCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1250   .text.RCC_BackupResetCmd:0000001c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1253   .text.RCC_ClockSecuritySystemCmd:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1259   .text.RCC_ClockSecuritySystemCmd:00000000 RCC_ClockSecuritySystemCmd
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1280   .text.RCC_ClockSecuritySystemCmd:0000001c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1283   .text.RCC_MCOConfig:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1289   .text.RCC_MCOConfig:00000000 RCC_MCOConfig
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1310   .text.RCC_MCOConfig:0000001c $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1313   .text.RCC_GetFlagStatus:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1384   .text.RCC_GetFlagStatus:00000070 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1387   .text.RCC_ClearFlag:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1393   .text.RCC_ClearFlag:00000000 RCC_ClearFlag
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1412   .text.RCC_ClearFlag:00000018 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1415   .text.RCC_GetITStatus:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1421   .text.RCC_GetITStatus:00000000 RCC_GetITStatus
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1455   .text.RCC_GetITStatus:00000030 $d
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1458   .text.RCC_ClearITPendingBit:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1464   .text.RCC_ClearITPendingBit:00000000 RCC_ClearITPendingBit
+C:\Users\hopnt\AppData\Local\Temp\ccYRKZYv.s:1485   .text.RCC_ClearITPendingBit:0000001c $d
+
+NO UNDEFINED SYMBOLS

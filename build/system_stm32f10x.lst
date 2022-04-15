@@ -1,0 +1,389 @@
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"system_stm32f10x.c"
+  14              		.text
+  15              		.global	SystemCoreClock
+  16              		.section	.data.SystemCoreClock,"aw"
+  17              		.align	2
+  20              	SystemCoreClock:
+  21 0000 00A24A04 		.word	72000000
+  22              		.global	AHBPrescTable
+  23              		.section	.data.AHBPrescTable,"aw"
+  24              		.align	2
+  27              	AHBPrescTable:
+  28 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
+  28      00000000 
+  28      01020304 
+  28      06
+  29 000d 070809   		.ascii	"\007\010\011"
+  30              		.section	.text.SystemInit,"ax",%progbits
+  31              		.align	1
+  32              		.global	SystemInit
+  33              		.syntax unified
+  34              		.thumb
+  35              		.thumb_func
+  37              	SystemInit:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 1, uses_anonymous_args = 0
+  40 0000 80B5     		push	{r7, lr}
+  41 0002 00AF     		add	r7, sp, #0
+  42 0004 154B     		ldr	r3, .L2
+  43 0006 1B68     		ldr	r3, [r3]
+  44 0008 144A     		ldr	r2, .L2
+  45 000a 43F00103 		orr	r3, r3, #1
+  46 000e 1360     		str	r3, [r2]
+  47 0010 124B     		ldr	r3, .L2
+  48 0012 5A68     		ldr	r2, [r3, #4]
+  49 0014 1149     		ldr	r1, .L2
+  50 0016 124B     		ldr	r3, .L2+4
+  51 0018 1340     		ands	r3, r3, r2
+  52 001a 4B60     		str	r3, [r1, #4]
+  53 001c 0F4B     		ldr	r3, .L2
+  54 001e 1B68     		ldr	r3, [r3]
+  55 0020 0E4A     		ldr	r2, .L2
+  56 0022 23F08473 		bic	r3, r3, #17301504
+  57 0026 23F48033 		bic	r3, r3, #65536
+  58 002a 1360     		str	r3, [r2]
+  59 002c 0B4B     		ldr	r3, .L2
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 2
+
+
+  60 002e 1B68     		ldr	r3, [r3]
+  61 0030 0A4A     		ldr	r2, .L2
+  62 0032 23F48023 		bic	r3, r3, #262144
+  63 0036 1360     		str	r3, [r2]
+  64 0038 084B     		ldr	r3, .L2
+  65 003a 5B68     		ldr	r3, [r3, #4]
+  66 003c 074A     		ldr	r2, .L2
+  67 003e 23F4FE03 		bic	r3, r3, #8323072
+  68 0042 5360     		str	r3, [r2, #4]
+  69 0044 054B     		ldr	r3, .L2
+  70 0046 4FF41F02 		mov	r2, #10420224
+  71 004a 9A60     		str	r2, [r3, #8]
+  72 004c FFF7FEFF 		bl	SetSysClock
+  73 0050 044B     		ldr	r3, .L2+8
+  74 0052 4FF00062 		mov	r2, #134217728
+  75 0056 9A60     		str	r2, [r3, #8]
+  76 0058 00BF     		nop
+  77 005a 80BD     		pop	{r7, pc}
+  78              	.L3:
+  79              		.align	2
+  80              	.L2:
+  81 005c 00100240 		.word	1073876992
+  82 0060 0000FFF8 		.word	-117506048
+  83 0064 00ED00E0 		.word	-536810240
+  85              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+  86              		.align	1
+  87              		.global	SystemCoreClockUpdate
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  92              	SystemCoreClockUpdate:
+  93              		@ args = 0, pretend = 0, frame = 16
+  94              		@ frame_needed = 1, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+  96 0000 80B4     		push	{r7}
+  97 0002 85B0     		sub	sp, sp, #20
+  98 0004 00AF     		add	r7, sp, #0
+  99 0006 0023     		movs	r3, #0
+ 100 0008 FB60     		str	r3, [r7, #12]
+ 101 000a 0023     		movs	r3, #0
+ 102 000c BB60     		str	r3, [r7, #8]
+ 103 000e 0023     		movs	r3, #0
+ 104 0010 7B60     		str	r3, [r7, #4]
+ 105 0012 2F4B     		ldr	r3, .L13
+ 106 0014 5B68     		ldr	r3, [r3, #4]
+ 107 0016 03F00C03 		and	r3, r3, #12
+ 108 001a FB60     		str	r3, [r7, #12]
+ 109 001c FB68     		ldr	r3, [r7, #12]
+ 110 001e 082B     		cmp	r3, #8
+ 111 0020 11D0     		beq	.L5
+ 112 0022 FB68     		ldr	r3, [r7, #12]
+ 113 0024 082B     		cmp	r3, #8
+ 114 0026 3AD8     		bhi	.L6
+ 115 0028 FB68     		ldr	r3, [r7, #12]
+ 116 002a 002B     		cmp	r3, #0
+ 117 002c 03D0     		beq	.L7
+ 118 002e FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 3
+
+
+ 119 0030 042B     		cmp	r3, #4
+ 120 0032 04D0     		beq	.L8
+ 121 0034 33E0     		b	.L6
+ 122              	.L7:
+ 123 0036 274B     		ldr	r3, .L13+4
+ 124 0038 274A     		ldr	r2, .L13+8
+ 125 003a 1A60     		str	r2, [r3]
+ 126 003c 33E0     		b	.L9
+ 127              	.L8:
+ 128 003e 254B     		ldr	r3, .L13+4
+ 129 0040 254A     		ldr	r2, .L13+8
+ 130 0042 1A60     		str	r2, [r3]
+ 131 0044 2FE0     		b	.L9
+ 132              	.L5:
+ 133 0046 224B     		ldr	r3, .L13
+ 134 0048 5B68     		ldr	r3, [r3, #4]
+ 135 004a 03F47013 		and	r3, r3, #3932160
+ 136 004e BB60     		str	r3, [r7, #8]
+ 137 0050 1F4B     		ldr	r3, .L13
+ 138 0052 5B68     		ldr	r3, [r3, #4]
+ 139 0054 03F48033 		and	r3, r3, #65536
+ 140 0058 7B60     		str	r3, [r7, #4]
+ 141 005a BB68     		ldr	r3, [r7, #8]
+ 142 005c 9B0C     		lsrs	r3, r3, #18
+ 143 005e 0233     		adds	r3, r3, #2
+ 144 0060 BB60     		str	r3, [r7, #8]
+ 145 0062 7B68     		ldr	r3, [r7, #4]
+ 146 0064 002B     		cmp	r3, #0
+ 147 0066 06D1     		bne	.L10
+ 148 0068 BB68     		ldr	r3, [r7, #8]
+ 149 006a 1C4A     		ldr	r2, .L13+12
+ 150 006c 02FB03F3 		mul	r3, r2, r3
+ 151 0070 184A     		ldr	r2, .L13+4
+ 152 0072 1360     		str	r3, [r2]
+ 153 0074 17E0     		b	.L9
+ 154              	.L10:
+ 155 0076 164B     		ldr	r3, .L13
+ 156 0078 5B68     		ldr	r3, [r3, #4]
+ 157 007a 03F40033 		and	r3, r3, #131072
+ 158 007e 002B     		cmp	r3, #0
+ 159 0080 06D0     		beq	.L12
+ 160 0082 BB68     		ldr	r3, [r7, #8]
+ 161 0084 154A     		ldr	r2, .L13+12
+ 162 0086 02FB03F3 		mul	r3, r2, r3
+ 163 008a 124A     		ldr	r2, .L13+4
+ 164 008c 1360     		str	r3, [r2]
+ 165 008e 0AE0     		b	.L9
+ 166              	.L12:
+ 167 0090 BB68     		ldr	r3, [r7, #8]
+ 168 0092 114A     		ldr	r2, .L13+8
+ 169 0094 02FB03F3 		mul	r3, r2, r3
+ 170 0098 0E4A     		ldr	r2, .L13+4
+ 171 009a 1360     		str	r3, [r2]
+ 172 009c 03E0     		b	.L9
+ 173              	.L6:
+ 174 009e 0D4B     		ldr	r3, .L13+4
+ 175 00a0 0D4A     		ldr	r2, .L13+8
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 4
+
+
+ 176 00a2 1A60     		str	r2, [r3]
+ 177 00a4 00BF     		nop
+ 178              	.L9:
+ 179 00a6 0A4B     		ldr	r3, .L13
+ 180 00a8 5B68     		ldr	r3, [r3, #4]
+ 181 00aa 1B09     		lsrs	r3, r3, #4
+ 182 00ac 03F00F03 		and	r3, r3, #15
+ 183 00b0 0B4A     		ldr	r2, .L13+16
+ 184 00b2 D35C     		ldrb	r3, [r2, r3]
+ 185 00b4 DBB2     		uxtb	r3, r3
+ 186 00b6 FB60     		str	r3, [r7, #12]
+ 187 00b8 064B     		ldr	r3, .L13+4
+ 188 00ba 1A68     		ldr	r2, [r3]
+ 189 00bc FB68     		ldr	r3, [r7, #12]
+ 190 00be 22FA03F3 		lsr	r3, r2, r3
+ 191 00c2 044A     		ldr	r2, .L13+4
+ 192 00c4 1360     		str	r3, [r2]
+ 193 00c6 00BF     		nop
+ 194 00c8 1437     		adds	r7, r7, #20
+ 195 00ca BD46     		mov	sp, r7
+ 196              		@ sp needed
+ 197 00cc 80BC     		pop	{r7}
+ 198 00ce 7047     		bx	lr
+ 199              	.L14:
+ 200              		.align	2
+ 201              	.L13:
+ 202 00d0 00100240 		.word	1073876992
+ 203 00d4 00000000 		.word	SystemCoreClock
+ 204 00d8 00127A00 		.word	8000000
+ 205 00dc 00093D00 		.word	4000000
+ 206 00e0 00000000 		.word	AHBPrescTable
+ 208              		.section	.text.SetSysClock,"ax",%progbits
+ 209              		.align	1
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 214              	SetSysClock:
+ 215              		@ args = 0, pretend = 0, frame = 0
+ 216              		@ frame_needed = 1, uses_anonymous_args = 0
+ 217 0000 80B5     		push	{r7, lr}
+ 218 0002 00AF     		add	r7, sp, #0
+ 219 0004 FFF7FEFF 		bl	SetSysClockTo72
+ 220 0008 00BF     		nop
+ 221 000a 80BD     		pop	{r7, pc}
+ 223              		.section	.text.SetSysClockTo72,"ax",%progbits
+ 224              		.align	1
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	SetSysClockTo72:
+ 230              		@ args = 0, pretend = 0, frame = 8
+ 231              		@ frame_needed = 1, uses_anonymous_args = 0
+ 232              		@ link register save eliminated.
+ 233 0000 80B4     		push	{r7}
+ 234 0002 83B0     		sub	sp, sp, #12
+ 235 0004 00AF     		add	r7, sp, #0
+ 236 0006 0023     		movs	r3, #0
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 5
+
+
+ 237 0008 7B60     		str	r3, [r7, #4]
+ 238 000a 0023     		movs	r3, #0
+ 239 000c 3B60     		str	r3, [r7]
+ 240 000e 3A4B     		ldr	r3, .L25
+ 241 0010 1B68     		ldr	r3, [r3]
+ 242 0012 394A     		ldr	r2, .L25
+ 243 0014 43F48033 		orr	r3, r3, #65536
+ 244 0018 1360     		str	r3, [r2]
+ 245              	.L18:
+ 246 001a 374B     		ldr	r3, .L25
+ 247 001c 1B68     		ldr	r3, [r3]
+ 248 001e 03F40033 		and	r3, r3, #131072
+ 249 0022 3B60     		str	r3, [r7]
+ 250 0024 7B68     		ldr	r3, [r7, #4]
+ 251 0026 0133     		adds	r3, r3, #1
+ 252 0028 7B60     		str	r3, [r7, #4]
+ 253 002a 3B68     		ldr	r3, [r7]
+ 254 002c 002B     		cmp	r3, #0
+ 255 002e 03D1     		bne	.L17
+ 256 0030 7B68     		ldr	r3, [r7, #4]
+ 257 0032 B3F5A06F 		cmp	r3, #1280
+ 258 0036 F0D1     		bne	.L18
+ 259              	.L17:
+ 260 0038 2F4B     		ldr	r3, .L25
+ 261 003a 1B68     		ldr	r3, [r3]
+ 262 003c 03F40033 		and	r3, r3, #131072
+ 263 0040 002B     		cmp	r3, #0
+ 264 0042 02D0     		beq	.L19
+ 265 0044 0123     		movs	r3, #1
+ 266 0046 3B60     		str	r3, [r7]
+ 267 0048 01E0     		b	.L20
+ 268              	.L19:
+ 269 004a 0023     		movs	r3, #0
+ 270 004c 3B60     		str	r3, [r7]
+ 271              	.L20:
+ 272 004e 3B68     		ldr	r3, [r7]
+ 273 0050 012B     		cmp	r3, #1
+ 274 0052 4BD1     		bne	.L24
+ 275 0054 294B     		ldr	r3, .L25+4
+ 276 0056 1B68     		ldr	r3, [r3]
+ 277 0058 284A     		ldr	r2, .L25+4
+ 278 005a 43F01003 		orr	r3, r3, #16
+ 279 005e 1360     		str	r3, [r2]
+ 280 0060 264B     		ldr	r3, .L25+4
+ 281 0062 1B68     		ldr	r3, [r3]
+ 282 0064 254A     		ldr	r2, .L25+4
+ 283 0066 23F00303 		bic	r3, r3, #3
+ 284 006a 1360     		str	r3, [r2]
+ 285 006c 234B     		ldr	r3, .L25+4
+ 286 006e 1B68     		ldr	r3, [r3]
+ 287 0070 224A     		ldr	r2, .L25+4
+ 288 0072 43F00203 		orr	r3, r3, #2
+ 289 0076 1360     		str	r3, [r2]
+ 290 0078 1F4B     		ldr	r3, .L25
+ 291 007a 1F4A     		ldr	r2, .L25
+ 292 007c 5B68     		ldr	r3, [r3, #4]
+ 293 007e 5360     		str	r3, [r2, #4]
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 6
+
+
+ 294 0080 1D4B     		ldr	r3, .L25
+ 295 0082 1D4A     		ldr	r2, .L25
+ 296 0084 5B68     		ldr	r3, [r3, #4]
+ 297 0086 5360     		str	r3, [r2, #4]
+ 298 0088 1B4B     		ldr	r3, .L25
+ 299 008a 5B68     		ldr	r3, [r3, #4]
+ 300 008c 1A4A     		ldr	r2, .L25
+ 301 008e 43F48063 		orr	r3, r3, #1024
+ 302 0092 5360     		str	r3, [r2, #4]
+ 303 0094 184B     		ldr	r3, .L25
+ 304 0096 5B68     		ldr	r3, [r3, #4]
+ 305 0098 174A     		ldr	r2, .L25
+ 306 009a 23F47C13 		bic	r3, r3, #4128768
+ 307 009e 5360     		str	r3, [r2, #4]
+ 308 00a0 154B     		ldr	r3, .L25
+ 309 00a2 5B68     		ldr	r3, [r3, #4]
+ 310 00a4 144A     		ldr	r2, .L25
+ 311 00a6 43F4E813 		orr	r3, r3, #1900544
+ 312 00aa 5360     		str	r3, [r2, #4]
+ 313 00ac 124B     		ldr	r3, .L25
+ 314 00ae 1B68     		ldr	r3, [r3]
+ 315 00b0 114A     		ldr	r2, .L25
+ 316 00b2 43F08073 		orr	r3, r3, #16777216
+ 317 00b6 1360     		str	r3, [r2]
+ 318 00b8 00BF     		nop
+ 319              	.L22:
+ 320 00ba 0F4B     		ldr	r3, .L25
+ 321 00bc 1B68     		ldr	r3, [r3]
+ 322 00be 03F00073 		and	r3, r3, #33554432
+ 323 00c2 002B     		cmp	r3, #0
+ 324 00c4 F9D0     		beq	.L22
+ 325 00c6 0C4B     		ldr	r3, .L25
+ 326 00c8 5B68     		ldr	r3, [r3, #4]
+ 327 00ca 0B4A     		ldr	r2, .L25
+ 328 00cc 23F00303 		bic	r3, r3, #3
+ 329 00d0 5360     		str	r3, [r2, #4]
+ 330 00d2 094B     		ldr	r3, .L25
+ 331 00d4 5B68     		ldr	r3, [r3, #4]
+ 332 00d6 084A     		ldr	r2, .L25
+ 333 00d8 43F00203 		orr	r3, r3, #2
+ 334 00dc 5360     		str	r3, [r2, #4]
+ 335 00de 00BF     		nop
+ 336              	.L23:
+ 337 00e0 054B     		ldr	r3, .L25
+ 338 00e2 5B68     		ldr	r3, [r3, #4]
+ 339 00e4 03F00C03 		and	r3, r3, #12
+ 340 00e8 082B     		cmp	r3, #8
+ 341 00ea F9D1     		bne	.L23
+ 342              	.L24:
+ 343 00ec 00BF     		nop
+ 344 00ee 0C37     		adds	r7, r7, #12
+ 345 00f0 BD46     		mov	sp, r7
+ 346              		@ sp needed
+ 347 00f2 80BC     		pop	{r7}
+ 348 00f4 7047     		bx	lr
+ 349              	.L26:
+ 350 00f6 00BF     		.align	2
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 7
+
+
+ 351              	.L25:
+ 352 00f8 00100240 		.word	1073876992
+ 353 00fc 00200240 		.word	1073881088
+ 355              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_stm32f10x.c
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:20     .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:17     .data.SystemCoreClock:00000000 $d
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:27     .data.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:24     .data.AHBPrescTable:00000000 $d
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:31     .text.SystemInit:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:37     .text.SystemInit:00000000 SystemInit
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:214    .text.SetSysClock:00000000 SetSysClock
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:81     .text.SystemInit:0000005c $d
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:86     .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:92     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:202    .text.SystemCoreClockUpdate:000000d0 $d
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:209    .text.SetSysClock:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:229    .text.SetSysClockTo72:00000000 SetSysClockTo72
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:224    .text.SetSysClockTo72:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\cc23ly4G.s:352    .text.SetSysClockTo72:000000f8 $d
+
+NO UNDEFINED SYMBOLS

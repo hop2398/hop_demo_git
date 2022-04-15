@@ -1,0 +1,302 @@
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              		.section	.text.Delay_1_Ms,"ax",%progbits
+  16              		.align	1
+  17              		.global	Delay_1_Ms
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	Delay_1_Ms:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 1, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 80B4     		push	{r7}
+  27 0002 00AF     		add	r7, sp, #0
+  28 0004 0A4B     		ldr	r3, .L3
+  29 0006 0B4A     		ldr	r2, .L3+4
+  30 0008 5A60     		str	r2, [r3, #4]
+  31 000a 094B     		ldr	r3, .L3
+  32 000c 0022     		movs	r2, #0
+  33 000e 9A60     		str	r2, [r3, #8]
+  34 0010 074B     		ldr	r3, .L3
+  35 0012 0522     		movs	r2, #5
+  36 0014 1A60     		str	r2, [r3]
+  37 0016 00BF     		nop
+  38              	.L2:
+  39 0018 054B     		ldr	r3, .L3
+  40 001a 1B68     		ldr	r3, [r3]
+  41 001c 03F48033 		and	r3, r3, #65536
+  42 0020 002B     		cmp	r3, #0
+  43 0022 F9D0     		beq	.L2
+  44 0024 00BF     		nop
+  45 0026 00BF     		nop
+  46 0028 BD46     		mov	sp, r7
+  47              		@ sp needed
+  48 002a 80BC     		pop	{r7}
+  49 002c 7047     		bx	lr
+  50              	.L4:
+  51 002e 00BF     		.align	2
+  52              	.L3:
+  53 0030 10E000E0 		.word	-536813552
+  54 0034 3F190100 		.word	71999
+  56              		.section	.text.Delay_Ms,"ax",%progbits
+  57              		.align	1
+  58              		.global	Delay_Ms
+  59              		.syntax unified
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s 			page 2
+
+
+  60              		.thumb
+  61              		.thumb_func
+  63              	Delay_Ms:
+  64              		@ args = 0, pretend = 0, frame = 8
+  65              		@ frame_needed = 1, uses_anonymous_args = 0
+  66 0000 80B5     		push	{r7, lr}
+  67 0002 82B0     		sub	sp, sp, #8
+  68 0004 00AF     		add	r7, sp, #0
+  69 0006 7860     		str	r0, [r7, #4]
+  70 0008 04E0     		b	.L6
+  71              	.L7:
+  72 000a FFF7FEFF 		bl	Delay_1_Ms
+  73 000e 7B68     		ldr	r3, [r7, #4]
+  74 0010 013B     		subs	r3, r3, #1
+  75 0012 7B60     		str	r3, [r7, #4]
+  76              	.L6:
+  77 0014 7B68     		ldr	r3, [r7, #4]
+  78 0016 002B     		cmp	r3, #0
+  79 0018 F7D1     		bne	.L7
+  80 001a 00BF     		nop
+  81 001c 00BF     		nop
+  82 001e 0837     		adds	r7, r7, #8
+  83 0020 BD46     		mov	sp, r7
+  84              		@ sp needed
+  85 0022 80BD     		pop	{r7, pc}
+  87              		.section	.text.delay_us,"ax",%progbits
+  88              		.align	1
+  89              		.global	delay_us
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	delay_us:
+  95              		@ args = 0, pretend = 0, frame = 16
+  96              		@ frame_needed = 1, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98 0000 80B4     		push	{r7}
+  99 0002 85B0     		sub	sp, sp, #20
+ 100 0004 00AF     		add	r7, sp, #0
+ 101 0006 0346     		mov	r3, r0
+ 102 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 103 000a FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 104 000c 9BB2     		uxth	r3, r3
+ 105 000e DB00     		lsls	r3, r3, #3
+ 106 0010 FB60     		str	r3, [r7, #12]
+ 107 0012 00BF     		nop
+ 108              	.L9:
+ 109 0014 FB68     		ldr	r3, [r7, #12]
+ 110 0016 5A1E     		subs	r2, r3, #1
+ 111 0018 FA60     		str	r2, [r7, #12]
+ 112 001a 002B     		cmp	r3, #0
+ 113 001c FAD1     		bne	.L9
+ 114 001e 00BF     		nop
+ 115 0020 00BF     		nop
+ 116 0022 1437     		adds	r7, r7, #20
+ 117 0024 BD46     		mov	sp, r7
+ 118              		@ sp needed
+ 119 0026 80BC     		pop	{r7}
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s 			page 3
+
+
+ 120 0028 7047     		bx	lr
+ 122              		.section	.text.delay,"ax",%progbits
+ 123              		.align	1
+ 124              		.global	delay
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	delay:
+ 130              		@ args = 0, pretend = 0, frame = 16
+ 131              		@ frame_needed = 1, uses_anonymous_args = 0
+ 132              		@ link register save eliminated.
+ 133 0000 80B4     		push	{r7}
+ 134 0002 85B0     		sub	sp, sp, #20
+ 135 0004 00AF     		add	r7, sp, #0
+ 136 0006 0346     		mov	r3, r0
+ 137 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 138 000a FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 139 000c 9BB2     		uxth	r3, r3
+ 140 000e 1A46     		mov	r2, r3
+ 141 0010 4FF44873 		mov	r3, #800
+ 142 0014 02FB03F3 		mul	r3, r2, r3
+ 143 0018 FB60     		str	r3, [r7, #12]
+ 144 001a 00BF     		nop
+ 145              	.L11:
+ 146 001c FB68     		ldr	r3, [r7, #12]
+ 147 001e 5A1E     		subs	r2, r3, #1
+ 148 0020 FA60     		str	r2, [r7, #12]
+ 149 0022 002B     		cmp	r3, #0
+ 150 0024 FAD1     		bne	.L11
+ 151 0026 00BF     		nop
+ 152 0028 00BF     		nop
+ 153 002a 1437     		adds	r7, r7, #20
+ 154 002c BD46     		mov	sp, r7
+ 155              		@ sp needed
+ 156 002e 80BC     		pop	{r7}
+ 157 0030 7047     		bx	lr
+ 159              		.section	.text.main,"ax",%progbits
+ 160              		.align	1
+ 161              		.global	main
+ 162              		.syntax unified
+ 163              		.thumb
+ 164              		.thumb_func
+ 166              	main:
+ 167              		@ args = 0, pretend = 0, frame = 8
+ 168              		@ frame_needed = 1, uses_anonymous_args = 0
+ 169 0000 80B5     		push	{r7, lr}
+ 170 0002 82B0     		sub	sp, sp, #8
+ 171 0004 00AF     		add	r7, sp, #0
+ 172 0006 4FF48030 		mov	r0, #65536
+ 173 000a FFF7FEFF 		bl	RCC_HSEConfig
+ 174 000e 4FF4E011 		mov	r1, #1835008
+ 175 0012 4FF48030 		mov	r0, #65536
+ 176 0016 FFF7FEFF 		bl	RCC_PLLConfig
+ 177 001a 0220     		movs	r0, #2
+ 178 001c FFF7FEFF 		bl	RCC_SYSCLKConfig
+ 179 0020 0020     		movs	r0, #0
+ 180 0022 FFF7FEFF 		bl	RCC_HCLKConfig
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s 			page 4
+
+
+ 181 0026 0020     		movs	r0, #0
+ 182 0028 FFF7FEFF 		bl	RCC_PCLK2Config
+ 183 002c 0121     		movs	r1, #1
+ 184 002e 0820     		movs	r0, #8
+ 185 0030 FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
+ 186 0034 4FF44053 		mov	r3, #12288
+ 187 0038 BB80     		strh	r3, [r7, #4]	@ movhi
+ 188 003a 0323     		movs	r3, #3
+ 189 003c BB71     		strb	r3, [r7, #6]
+ 190 003e 1023     		movs	r3, #16
+ 191 0040 FB71     		strb	r3, [r7, #7]
+ 192 0042 3B1D     		adds	r3, r7, #4
+ 193 0044 1946     		mov	r1, r3
+ 194 0046 2748     		ldr	r0, .L18
+ 195 0048 FFF7FEFF 		bl	GPIO_Init
+ 196              	.L17:
+ 197 004c 0023     		movs	r3, #0
+ 198 004e 7B80     		strh	r3, [r7, #2]	@ movhi
+ 199 0050 1DE0     		b	.L13
+ 200              	.L14:
+ 201 0052 244B     		ldr	r3, .L18
+ 202 0054 DB68     		ldr	r3, [r3, #12]
+ 203 0056 234A     		ldr	r2, .L18
+ 204 0058 43F48053 		orr	r3, r3, #4096
+ 205 005c D360     		str	r3, [r2, #12]
+ 206 005e 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 207 0060 9BB2     		uxth	r3, r3
+ 208 0062 C3F16403 		rsb	r3, r3, #100
+ 209 0066 9BB2     		uxth	r3, r3
+ 210 0068 1846     		mov	r0, r3
+ 211 006a FFF7FEFF 		bl	delay
+ 212 006e 1D4B     		ldr	r3, .L18
+ 213 0070 DB68     		ldr	r3, [r3, #12]
+ 214 0072 1C4A     		ldr	r2, .L18
+ 215 0074 23F48053 		bic	r3, r3, #4096
+ 216 0078 D360     		str	r3, [r2, #12]
+ 217 007a 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 218 007c 9BB2     		uxth	r3, r3
+ 219 007e 1846     		mov	r0, r3
+ 220 0080 FFF7FEFF 		bl	delay
+ 221 0084 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 222 0086 9BB2     		uxth	r3, r3
+ 223 0088 0133     		adds	r3, r3, #1
+ 224 008a 9BB2     		uxth	r3, r3
+ 225 008c 7B80     		strh	r3, [r7, #2]	@ movhi
+ 226              	.L13:
+ 227 008e 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 228 0090 9BB2     		uxth	r3, r3
+ 229 0092 642B     		cmp	r3, #100
+ 230 0094 DDD9     		bls	.L14
+ 231 0096 0023     		movs	r3, #0
+ 232 0098 3B80     		strh	r3, [r7]	@ movhi
+ 233 009a 1DE0     		b	.L15
+ 234              	.L16:
+ 235 009c 114B     		ldr	r3, .L18
+ 236 009e DB68     		ldr	r3, [r3, #12]
+ 237 00a0 104A     		ldr	r2, .L18
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s 			page 5
+
+
+ 238 00a2 43F48053 		orr	r3, r3, #4096
+ 239 00a6 D360     		str	r3, [r2, #12]
+ 240 00a8 3B88     		ldrh	r3, [r7]	@ movhi
+ 241 00aa 9BB2     		uxth	r3, r3
+ 242 00ac 1846     		mov	r0, r3
+ 243 00ae FFF7FEFF 		bl	delay
+ 244 00b2 0C4B     		ldr	r3, .L18
+ 245 00b4 DB68     		ldr	r3, [r3, #12]
+ 246 00b6 0B4A     		ldr	r2, .L18
+ 247 00b8 23F48053 		bic	r3, r3, #4096
+ 248 00bc D360     		str	r3, [r2, #12]
+ 249 00be 3B88     		ldrh	r3, [r7]	@ movhi
+ 250 00c0 9BB2     		uxth	r3, r3
+ 251 00c2 C3F16403 		rsb	r3, r3, #100
+ 252 00c6 9BB2     		uxth	r3, r3
+ 253 00c8 1846     		mov	r0, r3
+ 254 00ca FFF7FEFF 		bl	delay
+ 255 00ce 3B88     		ldrh	r3, [r7]	@ movhi
+ 256 00d0 9BB2     		uxth	r3, r3
+ 257 00d2 0133     		adds	r3, r3, #1
+ 258 00d4 9BB2     		uxth	r3, r3
+ 259 00d6 3B80     		strh	r3, [r7]	@ movhi
+ 260              	.L15:
+ 261 00d8 3B88     		ldrh	r3, [r7]	@ movhi
+ 262 00da 9BB2     		uxth	r3, r3
+ 263 00dc 642B     		cmp	r3, #100
+ 264 00de DDD9     		bls	.L16
+ 265 00e0 B4E7     		b	.L17
+ 266              	.L19:
+ 267 00e2 00BF     		.align	2
+ 268              	.L18:
+ 269 00e4 000C0140 		.word	1073810432
+ 271              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:16     .text.Delay_1_Ms:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:22     .text.Delay_1_Ms:00000000 Delay_1_Ms
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:53     .text.Delay_1_Ms:00000030 $d
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:57     .text.Delay_Ms:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:63     .text.Delay_Ms:00000000 Delay_Ms
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:88     .text.delay_us:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:94     .text.delay_us:00000000 delay_us
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:123    .text.delay:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:129    .text.delay:00000000 delay
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:160    .text.main:00000000 $t
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:166    .text.main:00000000 main
+C:\Users\hopnt\AppData\Local\Temp\ccAWOieq.s:269    .text.main:000000e4 $d
+
+UNDEFINED SYMBOLS
+RCC_HSEConfig
+RCC_PLLConfig
+RCC_SYSCLKConfig
+RCC_HCLKConfig
+RCC_PCLK2Config
+RCC_APB2PeriphClockCmd
+GPIO_Init
